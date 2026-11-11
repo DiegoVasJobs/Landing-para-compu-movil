@@ -1,0 +1,66 @@
+[
+  {
+    "id": "campo-laboral",
+    "areas": [
+      {
+        "titulo": "Desarrollo de software",
+        "descripcion": "Construir aplicaciones web, móviles y sistemas de información para empresas e instituciones."
+      },
+      {
+        "titulo": "Redes e infraestructura",
+        "descripcion": "Administrar sistemas, redes de datos y recursos computacionales."
+      },
+      {
+        "titulo": "Seguridad de la información",
+        "descripcion": "Auditar sistemas y definir políticas para proteger los datos de una organización."
+      },
+      {
+        "titulo": "Gestión de proyectos",
+        "descripcion": "Dirigir proyectos y equipos de desarrollo en organizaciones públicas, privadas o sin fines de lucro."
+      }
+    ],
+    "fuentesAreas": ["F01", "F03"],
+    "indicadores": [
+      {
+        "id": "empleabilidad-1",
+        "etiqueta": "Empleabilidad al 1.er año",
+        "valor": "87,1 %",
+        "detalle": "Titulados de 2021 a 2023 que ganaron al menos el sueldo mínimo un año después de titularse.",
+        "anio": 2025,
+        "fuente": "F04"
+      },
+      {
+        "id": "empleabilidad-2",
+        "etiqueta": "Empleabilidad al 2.º año",
+        "valor": "96,5 %",
+        "detalle": "Titulados de 2020 a 2022 que ganaron al menos el sueldo mínimo dos años después de titularse.",
+        "anio": 2025,
+        "fuente": "F04"
+      },
+      {
+        "id": "ingreso-4",
+        "etiqueta": "Ingreso bruto mensual al 4.º año",
+        "valor": "$2,2 a $2,3 millones",
+        "detalle": "Promedio de titulados de 2018 a 2020, antes de impuestos, en pesos de septiembre de 2025.",
+        "anio": 2025,
+        "fuente": "F04"
+      },
+      {
+        "id": "retencion-1",
+        "etiqueta": "Retención de 1.er año",
+        "valor": "90,1 %",
+        "detalle": "Estudiantes que entraron en 2024 y siguieron en la carrera en 2025.",
+        "anio": 2025,
+        "fuente": "F04"
+      },
+      {
+        "id": "duracion-real",
+        "etiqueta": "Duración real promedio",
+        "valor": "12,9 semestres",
+        "detalle": "Tiempo promedio que tardaron en titularse quienes se titularon en 2024. La duración formal es de 8 semestres.",
+        "anio": 2024,
+        "fuente": "F04"
+      }
+    ]
+  }
+]

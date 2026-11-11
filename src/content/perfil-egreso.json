@@ -1,0 +1,49 @@
+[
+  {
+    "id": "desarrollo-software",
+    "orden": 1,
+    "titulo": "Crear software",
+    "descripcion": "Diseñarás, programarás e integrarás aplicaciones y sistemas de información que resuelvan necesidades reales de una organización.",
+    "fuentes": [
+      "F01",
+      "F03"
+    ]
+  },
+  {
+    "id": "redes-infraestructura",
+    "orden": 2,
+    "titulo": "Administrar redes y equipos",
+    "descripcion": "Organizarás las redes y los recursos computacionales para que los datos viajen de forma segura y confiable.",
+    "fuentes": [
+      "F01",
+      "F03"
+    ]
+  },
+  {
+    "id": "calidad-seguridad",
+    "orden": 3,
+    "titulo": "Cuidar la calidad y la seguridad",
+    "descripcion": "Aplicarás estándares de calidad, seguridad y eficiencia en cada solución tecnológica que construyas.",
+    "fuentes": [
+      "F01"
+    ]
+  },
+  {
+    "id": "evaluar-desempeno",
+    "orden": 4,
+    "titulo": "Evaluar el rendimiento tecnológico",
+    "descripcion": "Medirás cómo funcionan los recursos tecnológicos de una empresa y propondrás mejoras basadas en datos.",
+    "fuentes": [
+      "F03"
+    ]
+  },
+  {
+    "id": "competencias-genericas",
+    "orden": 5,
+    "titulo": "Trabajar en equipo y seguir aprendiendo",
+    "descripcion": "Te comunicarás con claridad, colaborarás en equipos, emprenderás e innovarás con responsabilidad social.",
+    "fuentes": [
+      "F01"
+    ]
+  }
+]

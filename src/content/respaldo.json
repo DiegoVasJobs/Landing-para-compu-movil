@@ -1,0 +1,39 @@
+[
+  {
+    "id": "acreditacion-institucional",
+    "orden": 1,
+    "titulo": "Acreditación institucional",
+    "valorDestacado": "5 años · nivel Avanzado",
+    "descripcion": "La UTEM está acreditada hasta octubre de 2031 en sus cinco ámbitos: docencia, gestión, aseguramiento de la calidad, vinculación con el medio e investigación.",
+    "tipo": "dato",
+    "anio": 2026,
+    "fuentes": [
+      "F06",
+      "F11"
+    ]
+  },
+  {
+    "id": "certificacion-carrera",
+    "orden": 2,
+    "titulo": "Certificación de la carrera",
+    "valorDestacado": "5 años · 2025 a 2030",
+    "descripcion": "La carrera está certificada desde el 16 de junio de 2025 hasta el 16 de junio de 2030 por la Agencia Acreditadora de Chile y por CONAIC (México).",
+    "tipo": "dato",
+    "anio": 2025,
+    "fuentes": [
+      "F01"
+    ]
+  },
+  {
+    "id": "plan-oficial",
+    "orden": 3,
+    "titulo": "Plan de estudios oficial",
+    "valorDestacado": "240 créditos SCT",
+    "descripcion": "La malla fue aprobada por la Resolución Exenta N.° 03102 de 2022 y está a cargo de la Escuela de Informática de la Facultad de Ingeniería.",
+    "tipo": "dato",
+    "anio": 2022,
+    "fuentes": [
+      "F02"
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "plan-2022",
+    "nombrePlan": "Plan regular aprobado por Resolución Exenta N.° 03102 de 2022",
+    "explicacionCreditos": "SCT es el Sistema de Créditos Transferibles de Chile: mide toda la carga de trabajo del estudiante, dentro y fuera de clases.",
+    "creditosTotales": 240,
+    "fuentes": ["F02"],
+    "ciclos": {
+      "CCT": "Ciclo científico-tecnológico",
+      "CE": "Ciclo de especialización",
+      "CT": "Ciclo de titulación",
+      "PI": "Inglés",
+      "PPS": "Formación general"
+    },
+    "semestres": [
+      {
+        "numero": 1,
+        "asignaturas": [
+          { "codigo": "NIVB9010", "nombre": "Habilidades de Razonamiento Lógico", "sct": 4, "ciclo": "PPS" },
+          { "codigo": "MATC8010", "nombre": "Taller de Matemática", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "PPSB0004", "nombre": "Taller de Ciencia y Tecnología", "sct": 4, "ciclo": "PPS" },
+          { "codigo": "INFB6010", "nombre": "Introducción a la Ingeniería en Informática", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFO8004", "nombre": "Design Thinking", "sct": 4, "ciclo": "CE" },
+          { "codigo": "INFB6020", "nombre": "Algoritmos y Programación", "sct": 6, "ciclo": "CE" }
+        ]
+      },
+      {
+        "numero": 2,
+        "asignaturas": [
+          { "codigo": "NIVB9020", "nombre": "Habilidades de Trabajo Académico", "sct": 4, "ciclo": "PPS" },
+          { "codigo": "MATC8021", "nombre": "Cálculo Diferencial", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "MATC8020", "nombre": "Álgebra Clásica", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "FISCT001", "nombre": "Mecánica Clásica", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "INFB6030", "nombre": "Estructuras de Datos", "sct": 6, "ciclo": "CE" },
+          { "codigo": "PPSEXXXX", "nombre": "Electivo de Formación General", "sct": 2, "ciclo": "PPS" }
+        ]
+      },
+      {
+        "numero": 3,
+        "asignaturas": [
+          { "codigo": "MATC8031", "nombre": "Cálculo Integral", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "MATC8030", "nombre": "Álgebra Superior", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "FISCT002", "nombre": "Electromagnetismo", "sct": 6, "ciclo": "CCT" },
+          { "codigo": "INFB6051", "nombre": "Base de Datos", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFB6040", "nombre": "Lenguajes de Programación", "sct": 6, "ciclo": "CE" }
+        ]
+      },
+      {
+        "numero": 4,
+        "asignaturas": [
+          { "codigo": "ESTCT001", "nombre": "Estadística y Probabilidad", "sct": 4, "ciclo": "CCT" },
+          { "codigo": "INDB8082", "nombre": "Ingeniería Ambiental", "sct": 4, "ciclo": "CCT" },
+          { "codigo": "PPSB005", "nombre": "Taller de Principios de Sustentabilidad", "sct": 4, "ciclo": "PPS" },
+          { "codigo": "INFB8061", "nombre": "Grafos y Lenguajes Formales", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFB6062", "nombre": "Sistemas de Información", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFB6071", "nombre": "Arquitectura de Computadores", "sct": 6, "ciclo": "CE" }
+        ]
+      },
+      {
+        "numero": 5,
+        "asignaturas": [
+          { "codigo": "ELEC8040", "nombre": "Circuitos Eléctricos", "sct": 4, "ciclo": "CCT" },
+          { "codigo": "INDT002", "nombre": "Principios de Economía", "sct": 4, "ciclo": "CCT" },
+          { "codigo": "HUMC8020", "nombre": "Inglés I", "sct": 4, "ciclo": "PI" },
+          { "codigo": "INFE8001", "nombre": "Desarrollo Ágil", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFB6080", "nombre": "Sistemas Operativos", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFB6061", "nombre": "Análisis de Algoritmos", "sct": 6, "ciclo": "CE" }
+        ]
+      },
+      {
+        "numero": 6,
+        "asignaturas": [
+          { "codigo": "HUMC8030", "nombre": "Inglés II", "sct": 4, "ciclo": "PI" },
+          { "codigo": "INFO8005", "nombre": "Fundamentos de Data Science", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFO8001", "nombre": "Ciberseguridad", "sct": 4, "ciclo": "CE" },
+          { "codigo": "INFB8083", "nombre": "Evaluación de Proyectos Informáticos", "sct": 4, "ciclo": "CE" },
+          { "codigo": "INFB6072", "nombre": "Ingeniería de Software", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFB8080", "nombre": "Redes y Comunicación de Datos", "sct": 6, "ciclo": "CE" }
+        ]
+      },
+      {
+        "numero": 7,
+        "asignaturas": [
+          { "codigo": "INFB8103", "nombre": "Gestión de Proyectos Informáticos", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFO8002", "nombre": "Computación en la Nube", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFO8003", "nombre": "Computación Web y Móvil", "sct": 6, "ciclo": "CE" },
+          { "codigo": "INFBXXX-1", "nombre": "Electivo de Formación Especializada I", "sct": 4, "ciclo": "CE" },
+          { "codigo": "INFBXXX-2", "nombre": "Electivo de Formación Especializada II", "sct": 4, "ciclo": "CE" },
+          { "codigo": "INFB698", "nombre": "Trabajo de Título I", "sct": 4, "ciclo": "CT" }
+        ]
+      },
+      {
+        "numero": 8,
+        "asignaturas": [
+          { "codigo": "PPSB0006", "nombre": "Taller de Innovación y Emprendimiento", "sct": 4, "ciclo": "PPS" },
+          { "codigo": "INFB699", "nombre": "Trabajo de Título II", "sct": 4, "ciclo": "CT" },
+          { "codigo": "INFB900", "nombre": "Práctica Profesional", "sct": 22, "ciclo": "CE" }
+        ]
+      }
+    ]
+  }
+]

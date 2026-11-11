@@ -1,0 +1,55 @@
+[
+  {
+    "id": "admision-2027",
+    "procesoAdmision": 2027,
+    "vias": [
+      {
+        "nombre": "Acceso vía PAES",
+        "descripcion": "La vía regular: rindes la PAES y postulas con tu puntaje en la plataforma de Acceso Mineduc.",
+        "url": "https://www.utem.cl/admision/admision-acceso-via-paes/",
+        "fuentes": ["F10"]
+      },
+      {
+        "nombre": "Acceso directo",
+        "descripcion": "Vía especial de la UTEM con requisitos propios. Revisa las condiciones en su sitio.",
+        "url": "https://accesodirecto.utem.cl/",
+        "fuentes": ["F10"]
+      },
+      {
+        "nombre": "Programas de inclusión",
+        "descripcion": "Programas de equidad de la UTEM, como el Propedéutico. Revisa sus requisitos en el sitio oficial.",
+        "url": "https://www.utem.cl/admision/programas-de-inclusion-y-equidad/",
+        "fuentes": ["F10"]
+      }
+    ],
+    "ponderaciones": [
+      { "prueba": "Notas de Enseñanza Media (NEM)", "porcentaje": 10 },
+      { "prueba": "Ranking de notas", "porcentaje": 25 },
+      { "prueba": "Competencia Lectora", "porcentaje": 20 },
+      { "prueba": "Competencia Matemática 1 (M1)", "porcentaje": 30 },
+      { "prueba": "Competencia Matemática 2 (M2)", "porcentaje": 5 },
+      { "prueba": "Electiva de Ciencias", "porcentaje": 10, "electiva": true },
+      { "prueba": "Electiva de Historia y Ciencias Sociales", "porcentaje": 10, "electiva": true }
+    ],
+    "notaPonderaciones": "Debes rendir una de las dos pruebas electivas. Además, necesitas un promedio mínimo de 458 puntos entre Competencia Lectora y Matemática 1.",
+    "fuentesPonderaciones": ["F01"],
+    "fechas": [
+      { "hito": "Rendición PAES Regular", "inicio": "2026-11-30", "fin": "2026-12-02" },
+      { "hito": "Resultados de la PAES", "inicio": "2027-01-04" },
+      { "hito": "Postulación a carreras", "inicio": "2027-01-04", "fin": "2027-01-07" },
+      { "hito": "Resultados de selección", "inicio": "2027-01-18" },
+      { "hito": "Matrícula (primera etapa)", "inicio": "2027-01-19", "fin": "2027-01-21" }
+    ],
+    "fuentesFechas": ["F07"],
+    "costos": {
+      "matricula": 90000,
+      "arancelAnual": 4763300,
+      "anio": 2026,
+      "fuentes": ["F01"]
+    },
+    "contacto": {
+      "correo": "postulantes@utem.cl",
+      "telefono": "+56 2 2388 0976"
+    }
+  }
+]

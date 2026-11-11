@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ingenieria-en-informatica",
+    "institucion": "Universidad Tecnológica Metropolitana (UTEM)",
+    "nombreOficial": "Ingeniería en Informática",
+    "codigoDemre": 21030,
+    "titulo": "Ingeniera o Ingeniero en Informática",
+    "grado": "Licenciada o Licenciado en Informática",
+    "duracionSemestres": 8,
+    "jornada": "Diurna",
+    "sede": "Campus Macul",
+    "direccion": "Av. José Pedro Alessandri 1242, Ñuñoa, Santiago",
+    "vacantes": 150,
+    "fuentes": ["F01", "F02"],
+    "proposito": {
+      "texto": "Forma profesionales que diseñan, desarrollan e integran software y sistemas de información. También aprenden a gestionar redes y recursos tecnológicos con foco en seguridad, calidad y eficiencia.",
+      "fuentes": ["F01"]
+    },
+    "afines": [
+      {
+        "nombre": "Ingeniería Civil en Computación mención Informática",
+        "codigoDemre": 21041,
+        "duracionSemestres": 11,
+        "grado": "Licenciatura en Ciencias de la Ingeniería",
+        "enfoque": "Formula y dirige proyectos informáticos complejos, con más base en ciencias de la ingeniería e investigación.",
+        "fuentes": ["F08"]
+      },
+      {
+        "nombre": "Ingeniería Civil en Ciencia de Datos",
+        "codigoDemre": 21049,
+        "duracionSemestres": 11,
+        "grado": "Licenciatura en Ciencias de la Ingeniería",
+        "enfoque": "Analiza y modela grandes volúmenes de datos usando matemática, estadística y computación.",
+        "fuentes": ["F09"]
+      }
+    ],
+    "interpretacion": {
+      "tipo": "interpretacion",
+      "texto": "Según nuestra lectura de las fuentes oficiales, Ingeniería en Informática es la opción más corta (8 semestres frente a 11) y la más orientada a construir software y operar sistemas. Las ingenierías civiles dedican más tiempo a ciencias básicas, investigación o análisis de datos. Si te interesa programar y llegar antes al trabajo, esta carrera calza mejor."
+    }
+  }
+]

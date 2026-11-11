@@ -1,0 +1,62 @@
+[
+  {
+    "id": "general",
+    "tituloSeo": "Ingeniería en Informática UTEM | Admisión 2027",
+    "descripcionSeo": "Conoce Ingeniería en Informática de la UTEM: malla, campo laboral, acreditación y cómo postular, con datos oficiales citados.",
+    "nombreSitio": "Ingeniería en Informática · UTEM",
+    "aviso": "Proyecto académico de estudiantes de la asignatura EFE685. No es el sitio oficial de la UTEM: confirma siempre los datos en las fuentes citadas.",
+    "actualizado": "2026-11-11",
+    "asignatura": "EFE685 · Electivo de Computación Móvil · UTEM",
+    "integrantes": ["Diego Vásquez Castillo", "María García Huarca"],
+    "secciones": [
+      {
+        "id": "sobre",
+        "menu": "La carrera",
+        "titulo": "Sobre la carrera",
+        "pregunta": "¿En qué se diferencia de otras carreras parecidas?"
+      },
+      {
+        "id": "perfil",
+        "menu": "Perfil",
+        "titulo": "Perfil de egreso",
+        "pregunta": "¿Qué podré hacer al titularme?"
+      },
+      {
+        "id": "malla",
+        "menu": "Malla",
+        "titulo": "Plan de estudios",
+        "pregunta": "¿Qué aprenderé y en qué orden?"
+      },
+      {
+        "id": "campo-laboral",
+        "menu": "Trabajo",
+        "titulo": "Campo laboral",
+        "pregunta": "¿Dónde trabajaré y cuánto podría ganar?"
+      },
+      {
+        "id": "respaldo",
+        "menu": "Respaldo",
+        "titulo": "Respaldo institucional",
+        "pregunta": "¿Qué garantías de calidad tiene?"
+      },
+      {
+        "id": "admision",
+        "menu": "Admisión",
+        "titulo": "Admisión 2027",
+        "pregunta": "¿Cómo postulo y qué necesito?"
+      },
+      {
+        "id": "preguntas",
+        "menu": "Preguntas",
+        "titulo": "Preguntas frecuentes",
+        "pregunta": "Las dudas que más nos hicieron postulantes y familias."
+      },
+      {
+        "id": "referencias",
+        "menu": "Fuentes",
+        "titulo": "Referencias",
+        "pregunta": "¿De dónde sale cada dato de esta página?"
+      }
+    ]
+  }
+]
