@@ -165,7 +165,8 @@ const campoLaboral = defineCollection({
           /** Explicación en lenguaje claro de qué mide y a quiénes considera. */
           detalle: z.string(),
           anio,
-          fuente,
+          /** Fuente del dato y, si corresponde, de su metodología. */
+          fuentes,
         }),
       )
       .min(1),

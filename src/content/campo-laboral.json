@@ -27,7 +27,7 @@
         "valor": "87,1 %",
         "detalle": "Titulados de 2021 a 2023 que ganaron al menos el sueldo mínimo un año después de titularse.",
         "anio": 2025,
-        "fuente": "F04"
+        "fuentes": ["F04", "F05"]
       },
       {
         "id": "empleabilidad-2",
@@ -35,7 +35,7 @@
         "valor": "96,5 %",
         "detalle": "Titulados de 2020 a 2022 que ganaron al menos el sueldo mínimo dos años después de titularse.",
         "anio": 2025,
-        "fuente": "F04"
+        "fuentes": ["F04", "F05"]
       },
       {
         "id": "ingreso-4",
@@ -43,7 +43,7 @@
         "valor": "$2,2 a $2,3 millones",
         "detalle": "Promedio de titulados de 2018 a 2020, antes de impuestos, en pesos de septiembre de 2025.",
         "anio": 2025,
-        "fuente": "F04"
+        "fuentes": ["F04", "F05"]
       },
       {
         "id": "retencion-1",
@@ -51,7 +51,7 @@
         "valor": "90,1 %",
         "detalle": "Estudiantes que entraron en 2024 y siguieron en la carrera en 2025.",
         "anio": 2025,
-        "fuente": "F04"
+        "fuentes": ["F04", "F05"]
       },
       {
         "id": "duracion-real",
@@ -59,7 +59,7 @@
         "valor": "12,9 semestres",
         "detalle": "Tiempo promedio que tardaron en titularse quienes se titularon en 2024. La duración formal es de 8 semestres.",
         "anio": 2024,
-        "fuente": "F04"
+        "fuentes": ["F04", "F05"]
       }
     ]
   }
