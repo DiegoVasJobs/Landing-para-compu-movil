@@ -25,7 +25,7 @@ Los respaldos de consentimiento se guardan fuera del repositorio y solo se muest
 | N.° | Pregunta | Tipo de respuesta | Para qué sirve |
 | --- | --- | --- | --- |
 | 1 | ¿Qué describe mejor tu situación? | Única: 3.° medio · 4.° medio · Egresado/a de enseñanza media · Madre, padre o apoderado · Persona de 20 años o más que quiere estudiar o cambiar de carrera | Contexto del perfil de usuario |
-| 2 | ¿Dónde buscas información cuando eliges una carrera? | Múltiple: Google · Redes sociales · Sitio de la universidad · Mi Futuro o DEMRE · Ferias o charlas · Familia y amigos · Otro | Canal de llegada al sitio |
+| 2 | ¿Dónde buscas información cuando eliges una carrera? | Múltiple: Google · Instagram · TikTok · YouTube · Sitio de la universidad · Mi Futuro o DEMRE · Ferias o charlas del colegio · Familia y amigos · Otro | Canal de llegada al sitio |
 | 3 | ¿Qué es lo primero que quieres saber de una carrera universitaria? | Abierta | Preguntas principales |
 | 4 | Marca los **3 temas** que más te importan para decidir | Múltiple (máx. 3): Qué se estudia (malla) · Duración real · Costo, becas y gratuidad · Empleabilidad y sueldos · Acreditación · Puntajes y ponderaciones · Campus y horario · Diferencias con carreras parecidas | Priorización por frecuencia |
 | 5 | ¿Qué dudas o temores tienes sobre estudiar Ingeniería en Informática? | Abierta | Dudas y barreras |
