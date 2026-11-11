@@ -1,0 +1,26 @@
+# Resultado de la compilación (se genera con npm run build)
+dist/
+
+# Tipos generados automáticamente por Astro
+.astro/
+
+# Librerías instaladas (se recuperan con npm install)
+node_modules/
+
+# Registros de errores de npm
+npm-debug.log*
+
+# Variables de entorno y datos privados
+.env
+.env.*
+
+# Respaldos de consentimientos y notas internas: nunca se publican
+consentimientos/
+planificacion-local/
+*.local.md
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

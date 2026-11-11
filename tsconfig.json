@@ -1,0 +1,10 @@
+{
+  // Partimos de la configuración más estricta que ofrece Astro ("strictest"):
+  // activa el modo strict de TypeScript y reglas extra como prohibir variables sin usar
+  // o accesos a arreglos que podrían ser undefined.
+  "extends": "astro/tsconfigs/strictest",
+  // Archivos que TypeScript revisa: los tipos que Astro genera (.astro/types.d.ts) y todo el proyecto.
+  "include": [".astro/types.d.ts", "**/*"],
+  // Carpetas que no se revisan: la compilación final (dist) y las librerías externas.
+  "exclude": ["dist", "node_modules"]
+}
