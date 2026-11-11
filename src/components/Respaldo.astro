@@ -1,0 +1,53 @@
+---
+/**
+ * RESPALDO INSTITUCIONAL
+ * Responde "¿Qué garantías hay?": acreditación, certificación de la
+ * carrera, plan oficial y (cuando se agregue) cuerpo académico.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+import Etiqueta from './Etiqueta.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  items: CollectionEntry<'respaldo'>[];
+}
+
+const { meta, items } = Astro.props;
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta}>
+  <ul class="grilla respaldo">
+    {
+      items.map(({ data }) => (
+        <li class="tarjeta">
+          <Etiqueta tipo={data.tipo} />
+          <h3 class="respaldo__titulo">{data.titulo}</h3>
+          <p class="respaldo__valor">{data.valorDestacado}</p>
+          <p>{data.descripcion}</p>
+          <Cita fuentes={data.fuentes} anio={data.anio} />
+        </li>
+      ))
+    }
+  </ul>
+</Seccion>
+
+<style>
+  .respaldo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .respaldo__titulo {
+    margin: var(--espacio-2) 0 var(--espacio-1);
+  }
+
+  .respaldo__valor {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-acento);
+  }
+</style>

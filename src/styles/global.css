@@ -1,0 +1,192 @@
+/*
+ * ESTILOS GLOBALES
+ * ----------------------------------------------------------------------------
+ * Variables de diseño (colores, espacios, tipografía) y estilos base.
+ * Todos los colores de texto cumplen contraste mínimo 4.5:1 (WCAG 2.2 AA)
+ * sobre su fondo.
+ * Diseño "mobile first": primero se define el teléfono (360 px) y luego,
+ * con @media, se ajusta para tableta (768 px) y escritorio (1280 px).
+ */
+
+:root {
+  /* Colores */
+  --color-fondo: #ffffff;
+  --color-fondo-suave: #f3f6fa;
+  --color-texto: #1b2230;
+  --color-texto-suave: #4a5568; /* 7.4:1 sobre blanco */
+  --color-primario: #0b4f8a; /* 8.3:1 sobre blanco */
+  --color-primario-oscuro: #083a66;
+  --color-acento: #0f766e; /* 5.4:1 sobre blanco */
+  --color-borde: #d5dbe3;
+  --color-foco: #c2410c;
+
+  /* Etiquetas de tipo de contenido (Fase D) */
+  --etiqueta-dato-fondo: #e3eefa;
+  --etiqueta-dato-texto: #0b3d6b;
+  --etiqueta-interpretacion-fondo: #fff1cc;
+  --etiqueta-interpretacion-texto: #6b4500;
+  --etiqueta-testimonio-fondo: #e2f4ea;
+  --etiqueta-testimonio-texto: #14532d;
+
+  /* Tipografía del sistema: no se descarga ninguna fuente (mejor rendimiento). */
+  --fuente: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Espaciado y medidas */
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 1rem;
+  --espacio-4: 1.5rem;
+  --espacio-5: 2.5rem;
+  --espacio-6: 4rem;
+  --ancho-maximo: 72rem;
+  --radio: 0.5rem;
+}
+
+/* Reinicio mínimo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Desplazamiento suave al usar el menú, salvo que la persona prefiera menos movimiento. */
+  scroll-behavior: smooth;
+  /* Deja espacio para el encabezado fijo (2 líneas en móvil) al saltar a una sección. */
+  scroll-padding-top: 6.5rem;
+}
+
+@media (min-width: 64rem) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--espacio-3);
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  color: var(--color-primario-oscuro);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 var(--espacio-3);
+}
+
+a {
+  color: var(--color-primario);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--color-primario-oscuro);
+}
+
+/* Foco visible y notorio para quienes navegan con teclado. */
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor centrado con márgenes laterales de 16 px en móvil. */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: var(--espacio-3);
+}
+
+/* Texto solo para lectores de pantalla (oculto visualmente). */
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Botones / llamados a la acción */
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radio);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--color-primario);
+  background: var(--color-primario);
+  color: #ffffff;
+}
+
+.boton:hover {
+  background: var(--color-primario-oscuro);
+  border-color: var(--color-primario-oscuro);
+  color: #ffffff;
+}
+
+.boton--secundario {
+  background: transparent;
+  color: var(--color-primario);
+}
+
+.boton--secundario:hover {
+  background: var(--color-fondo-suave);
+  color: var(--color-primario-oscuro);
+}
+
+/* Tarjetas reutilizables */
+.tarjeta {
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: var(--espacio-4);
+}
+
+/* Grilla adaptable: 1 columna en móvil, más columnas si hay espacio. */
+.grilla {
+  display: grid;
+  gap: var(--espacio-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+/* Texto pequeño para notas y fuentes */
+.nota {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}

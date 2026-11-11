@@ -1,0 +1,68 @@
+---
+/**
+ * PREGUNTAS FRECUENTES
+ * Preguntas reales detectadas en la encuesta (Fase B), ordenadas por
+ * frecuencia. Usa <details>/<summary>: se abren y cierran sin JavaScript
+ * y funcionan con teclado de forma nativa.
+ */
+import { render, type CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+import Etiqueta from './Etiqueta.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  preguntas: CollectionEntry<'faq'>[];
+}
+
+const { meta, preguntas } = Astro.props;
+
+// Convertimos el Markdown de cada respuesta en HTML antes de mostrarlo.
+const preguntasConRespuesta = await Promise.all(
+  preguntas.map(async (pregunta) => ({ pregunta, Respuesta: (await render(pregunta)).Content })),
+);
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta}>
+  <div class="preguntas">
+    {
+      preguntasConRespuesta.map(({ pregunta, Respuesta }) => (
+        <details class="tarjeta pregunta">
+          <summary>{pregunta.data.pregunta}</summary>
+          <div class="pregunta__respuesta">
+            <Etiqueta tipo={pregunta.data.tipo} />
+            <Respuesta />
+            <Cita fuentes={pregunta.data.fuentes} />
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</Seccion>
+
+<style>
+  .preguntas {
+    display: grid;
+    gap: var(--espacio-2);
+    max-width: 48rem;
+  }
+
+  .pregunta {
+    padding: 0;
+  }
+
+  .pregunta summary {
+    padding: var(--espacio-3) var(--espacio-4);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .pregunta__respuesta {
+    padding: 0 var(--espacio-4) var(--espacio-3);
+  }
+
+  .pregunta__respuesta :global(p) {
+    margin: var(--espacio-2) 0;
+  }
+</style>

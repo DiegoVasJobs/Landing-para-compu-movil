@@ -1,0 +1,91 @@
+---
+/**
+ * ENCABEZADO
+ * Nombre del sitio y menú de navegación hacia cada sección.
+ * Sin JavaScript: en móvil el menú se desplaza horizontalmente.
+ */
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  nombreSitio: string;
+  secciones: CollectionEntry<'sitio'>['data']['secciones'];
+}
+
+const { nombreSitio, secciones } = Astro.props;
+---
+
+<header class="encabezado">
+  <div class="contenedor encabezado__interior">
+    <a class="encabezado__marca" href="#inicio">{nombreSitio}</a>
+    <nav aria-label="Secciones de la página">
+      <ul class="encabezado__menu">
+        {
+          secciones.map((seccion) => (
+            <li>
+              <a href={`#${seccion.id}`}>{seccion.menu}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+  }
+
+  .encabezado__interior {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-1);
+    padding-block: var(--espacio-2);
+  }
+
+  .encabezado__marca {
+    font-weight: 700;
+    color: var(--color-primario-oscuro);
+    text-decoration: none;
+  }
+
+  .encabezado__menu {
+    display: flex;
+    gap: var(--espacio-1);
+    margin: 0;
+    padding: 0 0 var(--espacio-1);
+    list-style: none;
+    /* En pantallas angostas el menú se desliza dentro de sí mismo, sin mover la página. */
+    overflow-x: auto;
+  }
+
+  .encabezado__menu a {
+    display: block;
+    padding: var(--espacio-2) var(--espacio-2);
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 0.95rem;
+    /* Área táctil mínima de 24 px (WCAG 2.5.8). */
+    min-height: 2.75rem;
+  }
+
+  .encabezado__menu a:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 64rem) {
+    .encabezado__interior {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .encabezado__menu {
+      padding: 0;
+    }
+  }
+</style>

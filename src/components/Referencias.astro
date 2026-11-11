@@ -1,0 +1,79 @@
+---
+/**
+ * REFERENCIAS
+ * Responde "¿De dónde sale esto?": lista de fuentes en APA 7 con fecha
+ * de consulta. Cada entrada tiene un ancla (#ref-F01) a la que apuntan
+ * las citas breves del resto de la página.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import { formatearFecha } from '../lib/formato';
+import Seccion from './Seccion.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  referencias: CollectionEntry<'referencias'>[];
+}
+
+const { meta, referencias } = Astro.props;
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
+  <ol class="referencias">
+    {
+      referencias.map(({ id, data }) => (
+        <li id={`ref-${id}`} class="referencia" tabindex="-1">
+          <span class="referencia__id">{id}</span>
+          <div>
+            <p class="referencia__apa">{data.apa}</p>
+            <p class="nota">
+              Fuente {data.tipo} · Consultada el{' '}
+              <time datetime={data.fechaConsulta}>{formatearFecha(data.fechaConsulta)}</time> ·{' '}
+              <a href={data.url} rel="external noopener">
+                Abrir fuente {id}
+                <span class="solo-lector"> (sitio externo)</span>
+              </a>
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Seccion>
+
+<style>
+  .referencias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--espacio-3);
+  }
+
+  .referencia {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: var(--espacio-2);
+    padding: var(--espacio-3);
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+  }
+
+  /* Resalta la referencia cuando se llega desde una cita. */
+  .referencia:target {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px var(--etiqueta-dato-fondo);
+  }
+
+  .referencia__id {
+    font-weight: 700;
+    color: var(--color-primario);
+  }
+
+  .referencia__apa {
+    /* Las URL largas de APA se cortan para no desbordar en móvil. */
+    overflow-wrap: anywhere;
+    margin-bottom: var(--espacio-1);
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+/**
+ * PÁGINA PRINCIPAL (landing de una sola vista)
+ * ----------------------------------------------------------------------------
+ * Esta página no contiene textos propios: solo carga los datos de
+ * src/content/ y los entrega a cada componente de sección.
+ * El orden de las secciones sigue la arquitectura de información (Fase C).
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SobreCarrera from '../components/SobreCarrera.astro';
+import PerfilEgreso from '../components/PerfilEgreso.astro';
+import Malla from '../components/Malla.astro';
+import CampoLaboral from '../components/CampoLaboral.astro';
+import Respaldo from '../components/Respaldo.astro';
+import Admision from '../components/Admision.astro';
+import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+import Referencias from '../components/Referencias.astro';
+import {
+  buscarSeccion,
+  obtenerCompetencias,
+  obtenerObligatorio,
+  obtenerPreguntas,
+  obtenerReferencias,
+  obtenerRespaldo,
+} from '../lib/contenido';
+
+// 1. Carga de datos (se ejecuta al construir el sitio, no en el navegador).
+const sitio = await obtenerObligatorio('sitio', 'general');
+const carrera = await obtenerObligatorio('carrera', 'ingenieria-en-informatica');
+const malla = await obtenerObligatorio('malla', 'plan-2022');
+const campo = await obtenerObligatorio('campoLaboral', 'campo-laboral');
+const admision = await obtenerObligatorio('admision', 'admision-2027');
+const competencias = await obtenerCompetencias();
+const respaldo = await obtenerRespaldo();
+const preguntas = await obtenerPreguntas();
+const referencias = await obtenerReferencias();
+
+// 2. Textos de cada sección (título y pregunta) desde sitio.json.
+const s = sitio.secciones;
+---
+
+<BaseLayout>
+  <Hero carrera={carrera} />
+  <SobreCarrera meta={buscarSeccion(s, 'sobre')} carrera={carrera} />
+  <PerfilEgreso meta={buscarSeccion(s, 'perfil')} competencias={competencias} />
+  <Malla meta={buscarSeccion(s, 'malla')} malla={malla} />
+  <CampoLaboral meta={buscarSeccion(s, 'campo-laboral')} campo={campo} />
+  <Respaldo meta={buscarSeccion(s, 'respaldo')} items={respaldo} />
+  <Admision meta={buscarSeccion(s, 'admision')} admision={admision} />
+  <PreguntasFrecuentes meta={buscarSeccion(s, 'preguntas')} preguntas={preguntas} />
+  <Referencias meta={buscarSeccion(s, 'referencias')} referencias={referencias} />
+</BaseLayout>

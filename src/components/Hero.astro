@@ -1,0 +1,121 @@
+---
+/**
+ * PORTADA (HERO)
+ * Responde "¿Qué es la carrera?": nombre oficial, título, grado,
+ * duración, jornada y llamados a la acción.
+ */
+import type { CollectionEntry } from 'astro:content';
+import Cita from './Cita.astro';
+
+interface Props {
+  carrera: CollectionEntry<'carrera'>['data'];
+}
+
+const { carrera } = Astro.props;
+
+/** Datos clave que se muestran como lista de definiciones. */
+const datosClave: ReadonlyArray<{ termino: string; valor: string }> = [
+  { termino: 'Título profesional', valor: carrera.titulo },
+  { termino: 'Grado académico', valor: carrera.grado },
+  { termino: 'Duración formal', valor: `${carrera.duracionSemestres} semestres` },
+  { termino: 'Jornada', valor: carrera.jornada },
+  { termino: 'Sede', valor: carrera.sede },
+  { termino: 'Código DEMRE', valor: String(carrera.codigoDemre) },
+];
+---
+
+<div id="inicio" class="hero">
+  <div class="contenedor hero__interior">
+    <div>
+      <p class="hero__antetitulo">{carrera.institucion}</p>
+      <h1>{carrera.nombreOficial}</h1>
+      <p class="hero__bajada">
+        {carrera.proposito.texto}
+        <Cita fuentes={carrera.proposito.fuentes} />
+      </p>
+      <div class="hero__acciones">
+        <a class="boton" href="#admision">Cómo postular</a>
+        <a class="boton boton--secundario" href="#malla">Ver la malla</a>
+      </div>
+    </div>
+
+    <div class="tarjeta hero__ficha">
+      <dl>
+        {
+          datosClave.map((dato) => (
+            <div class="hero__dato">
+              <dt>{dato.termino}</dt>
+              <dd>{dato.valor}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="nota">
+        {carrera.vacantes} vacantes · {carrera.direccion}
+        <Cita fuentes={carrera.fuentes} />
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero {
+    padding-block: var(--espacio-5);
+    background: linear-gradient(180deg, var(--color-fondo-suave), var(--color-fondo));
+  }
+
+  .hero__interior {
+    display: grid;
+    gap: var(--espacio-4);
+  }
+
+  .hero__antetitulo {
+    font-weight: 600;
+    color: var(--color-acento);
+    margin-bottom: var(--espacio-2);
+  }
+
+  .hero__bajada {
+    font-size: 1.15rem;
+    max-width: 38rem;
+  }
+
+  .hero__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-2);
+  }
+
+  .hero__ficha dl {
+    margin: 0 0 var(--espacio-3);
+  }
+
+  .hero__dato {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--espacio-3);
+    padding-block: var(--espacio-2);
+    border-bottom: 1px solid var(--color-borde);
+  }
+
+  .hero__dato dt {
+    color: var(--color-texto-suave);
+  }
+
+  .hero__dato dd {
+    margin: 0;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  @media (min-width: 48rem) {
+    .hero {
+      padding-block: var(--espacio-6);
+    }
+
+    .hero__interior {
+      grid-template-columns: 3fr 2fr;
+      align-items: center;
+    }
+  }
+</style>

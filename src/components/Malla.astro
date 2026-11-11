@@ -1,0 +1,233 @@
+---
+/**
+ * PLAN DE ESTUDIOS (MALLA)
+ * Responde "¿Qué aprenderé?": asignaturas por semestre con créditos SCT
+ * y ciclo formativo, tomadas de la resolución oficial.
+ *
+ * Interactividad (única del sitio): filtro por año con un script pequeño.
+ * Mejora progresiva: sin JavaScript se ve la malla completa y los botones
+ * del filtro permanecen ocultos.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  malla: CollectionEntry<'malla'>['data'];
+}
+
+const { meta, malla } = Astro.props;
+
+/** Año de la carrera al que pertenece un semestre (1-2 → año 1, 3-4 → año 2, ...). */
+function anioDeSemestre(semestre: number): number {
+  return Math.ceil(semestre / 2);
+}
+
+/** Lista de años distintos (1 a 4) para los botones del filtro. */
+const anios: number[] = [...new Set(malla.semestres.map((s) => anioDeSemestre(s.numero)))];
+
+/** Ciclos presentes en la leyenda, en orden de aparición del JSON. */
+const ciclos = Object.entries(malla.ciclos);
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta}>
+  <p>
+    {malla.nombrePlan}: {malla.semestres.length} semestres y {malla.creditosTotales} créditos SCT.
+    <Cita fuentes={malla.fuentes} />
+  </p>
+  <p class="nota">{malla.explicacionCreditos}</p>
+
+  <!-- Filtro por año: oculto hasta que el script lo active. -->
+  <div class="filtro" data-filtro hidden>
+    <p class="filtro__titulo" id="filtro-titulo">Filtrar por año:</p>
+    <div class="filtro__botones" role="group" aria-labelledby="filtro-titulo">
+      <button type="button" data-anio="todos" aria-pressed="true">Todos</button>
+      {
+        anios.map((anio) => (
+          <button type="button" data-anio={String(anio)} aria-pressed="false">
+            Año {anio}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <ul class="leyenda" aria-label="Leyenda de ciclos formativos">
+    {
+      ciclos.map(([codigo, nombre]) => (
+        <li>
+          <span class={`ciclo ciclo--${codigo}`}>{codigo}</span> {nombre}
+        </li>
+      ))
+    }
+  </ul>
+
+  <ol class="semestres">
+    {
+      malla.semestres.map((semestre) => (
+        <li class="tarjeta semestre" data-anio={String(anioDeSemestre(semestre.numero))}>
+          <h3>
+            Semestre {semestre.numero}
+            <span class="nota">
+              · {semestre.asignaturas.reduce((total, ramo) => total + ramo.sct, 0)} SCT
+            </span>
+          </h3>
+          <ul class="ramos">
+            {semestre.asignaturas.map((ramo) => (
+              <li class="ramo">
+                <span class={`ciclo ciclo--${ramo.ciclo}`} title={malla.ciclos[ramo.ciclo]}>
+                  {ramo.ciclo}
+                </span>
+                <span class="ramo__nombre">{ramo.nombre}</span>
+                <span class="ramo__sct">{ramo.sct} SCT</span>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ol>
+</Seccion>
+
+<script>
+  /**
+   * Filtro de la malla por año.
+   * Muestra solo los semestres del año elegido y marca el botón activo
+   * con aria-pressed para lectores de pantalla.
+   */
+  const filtro = document.querySelector<HTMLElement>('[data-filtro]');
+  const botones = document.querySelectorAll<HTMLButtonElement>('[data-filtro] button');
+  const semestres = document.querySelectorAll<HTMLElement>('.semestre');
+
+  if (filtro) {
+    // Con JavaScript disponible, mostramos el filtro.
+    filtro.hidden = false;
+
+    botones.forEach((boton) => {
+      boton.addEventListener('click', () => {
+        const anioElegido = boton.dataset['anio'] ?? 'todos';
+
+        botones.forEach((b) => b.setAttribute('aria-pressed', String(b === boton)));
+        semestres.forEach((semestre) => {
+          semestre.hidden = anioElegido !== 'todos' && semestre.dataset['anio'] !== anioElegido;
+        });
+      });
+    });
+  }
+</script>
+
+<style>
+  .filtro__titulo {
+    font-weight: 600;
+    margin-bottom: var(--espacio-2);
+  }
+
+  .filtro__botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-2);
+    margin-bottom: var(--espacio-3);
+  }
+
+  .filtro__botones button {
+    font: inherit;
+    min-height: 2.75rem;
+    padding: var(--espacio-2) var(--espacio-3);
+    border: 2px solid var(--color-primario);
+    border-radius: var(--radio);
+    background: var(--color-fondo);
+    color: var(--color-primario);
+    cursor: pointer;
+  }
+
+  .filtro__botones button[aria-pressed='true'] {
+    background: var(--color-primario);
+    color: #ffffff;
+  }
+
+  .leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-2) var(--espacio-4);
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--espacio-4);
+    font-size: 0.9rem;
+  }
+
+  .semestres {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--espacio-3);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  }
+
+  .semestre {
+    padding: var(--espacio-3);
+  }
+
+  .semestre[hidden] {
+    display: none;
+  }
+
+  .ramos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ramo {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: var(--espacio-2);
+    padding-block: var(--espacio-1);
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 0.95rem;
+  }
+
+  .ramo__sct {
+    color: var(--color-texto-suave);
+    white-space: nowrap;
+  }
+
+  /* Insignia del ciclo: texto + color (no depende solo del color). */
+  .ciclo {
+    display: inline-block;
+    min-width: 2.75rem;
+    padding: 0 0.3rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .ciclo--CCT {
+    background: #e3eefa;
+    color: #0b3d6b;
+  }
+
+  .ciclo--CE {
+    background: #dff3f0;
+    color: #0b5a54;
+  }
+
+  .ciclo--CT {
+    background: #f3e8ff;
+    color: #5b21b6;
+  }
+
+  .ciclo--PI {
+    background: #fff1cc;
+    color: #6b4500;
+  }
+
+  .ciclo--PPS {
+    background: #eceff3;
+    color: #374151;
+  }
+</style>

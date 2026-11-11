@@ -1,0 +1,112 @@
+---
+/**
+ * SOBRE LA CARRERA
+ * Responde "¿En qué se diferencia?": compara con 2 carreras afines
+ * (datos oficiales) y agrega el análisis del equipo, etiquetado como
+ * interpretación.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+import Etiqueta from './Etiqueta.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  carrera: CollectionEntry<'carrera'>['data'];
+}
+
+const { meta, carrera } = Astro.props;
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta}>
+  <div class="tabla-desplazable" role="region" aria-labelledby="tabla-afines" tabindex="0">
+    <table class="comparacion">
+      <caption id="tabla-afines">Comparación con carreras afines de la UTEM</caption>
+      <thead>
+        <tr>
+          <th scope="col">Carrera</th>
+          <th scope="col">Duración</th>
+          <th scope="col">Grado</th>
+          <th scope="col">Enfoque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="comparacion__destacada">
+          <th scope="row">{carrera.nombreOficial} ({carrera.codigoDemre})</th>
+          <td>{carrera.duracionSemestres} semestres</td>
+          <td>{carrera.grado}</td>
+          <td>
+            {carrera.proposito.texto}
+            <Cita fuentes={carrera.proposito.fuentes} />
+          </td>
+        </tr>
+        {
+          carrera.afines.map((afin) => (
+            <tr>
+              <th scope="row">
+                {afin.nombre} ({afin.codigoDemre})
+              </th>
+              <td>{afin.duracionSemestres} semestres</td>
+              <td>{afin.grado}</td>
+              <td>
+                {afin.enfoque}
+                <Cita fuentes={afin.fuentes} />
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <aside class="tarjeta interpretacion" aria-label="Interpretación del equipo">
+    <Etiqueta tipo={carrera.interpretacion.tipo} />
+    <p>{carrera.interpretacion.texto}</p>
+  </aside>
+</Seccion>
+
+<style>
+  /* La tabla se desplaza dentro de su caja en móvil, sin mover toda la página. */
+  .tabla-desplazable {
+    overflow-x: auto;
+    margin-bottom: var(--espacio-4);
+  }
+
+  .comparacion {
+    width: 100%;
+    min-width: 40rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .comparacion caption {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: var(--espacio-2);
+  }
+
+  .comparacion th,
+  .comparacion td {
+    padding: var(--espacio-2) var(--espacio-3);
+    border-bottom: 1px solid var(--color-borde);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .comparacion thead th {
+    background: var(--color-fondo-suave);
+  }
+
+  .comparacion__destacada {
+    background: var(--etiqueta-dato-fondo);
+  }
+
+  .interpretacion {
+    border-left: 4px solid var(--etiqueta-interpretacion-texto);
+  }
+
+  .interpretacion p {
+    margin: var(--espacio-2) 0 0;
+  }
+</style>

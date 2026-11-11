@@ -1,0 +1,49 @@
+---
+/**
+ * ETIQUETA DE TIPO DE CONTENIDO
+ * Distingue visualmente un dato institucional, una interpretación del
+ * equipo o un testimonio (requisito de la Fase D). No depende solo del
+ * color: siempre muestra el texto.
+ */
+type TipoContenido = 'dato' | 'interpretacion' | 'testimonio';
+
+interface Props {
+  tipo: TipoContenido;
+}
+
+const { tipo } = Astro.props;
+
+/** Texto visible de cada tipo. */
+const textos: Record<TipoContenido, string> = {
+  dato: 'Dato oficial',
+  interpretacion: 'Interpretación del equipo',
+  testimonio: 'Testimonio (opinión personal)',
+};
+---
+
+<span class={`etiqueta etiqueta--${tipo}`}>{textos[tipo]}</span>
+
+<style>
+  .etiqueta {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .etiqueta--dato {
+    background: var(--etiqueta-dato-fondo);
+    color: var(--etiqueta-dato-texto);
+  }
+
+  .etiqueta--interpretacion {
+    background: var(--etiqueta-interpretacion-fondo);
+    color: var(--etiqueta-interpretacion-texto);
+  }
+
+  .etiqueta--testimonio {
+    background: var(--etiqueta-testimonio-fondo);
+    color: var(--etiqueta-testimonio-texto);
+  }
+</style>

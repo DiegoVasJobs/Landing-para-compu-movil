@@ -1,0 +1,176 @@
+---
+/**
+ * ADMISIÓN
+ * Responde "¿Cómo postulo?": vías de ingreso, ponderaciones, fechas
+ * clave del proceso DEMRE, costos y contacto.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import { formatearPesos, formatearRango } from '../lib/formato';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  admision: CollectionEntry<'admision'>['data'];
+}
+
+const { meta, admision } = Astro.props;
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
+  <h3>Vías de ingreso</h3>
+  <ul class="grilla lista-limpia">
+    {
+      admision.vias.map((via) => (
+        <li class="tarjeta">
+          <p class="via__nombre">{via.nombre}</p>
+          <p>{via.descripcion}</p>
+          <a href={via.url} rel="external noopener">
+            Más información sobre {via.nombre}
+            <span class="solo-lector"> (sitio externo)</span>
+          </a>
+          <Cita fuentes={via.fuentes} />
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="admision__columnas">
+    <div>
+      <h3>Ponderaciones <Cita fuentes={admision.fuentesPonderaciones} /></h3>
+      <table class="ponderaciones">
+        <caption class="solo-lector">Ponderación de cada prueba en el puntaje de postulación</caption>
+        <thead>
+          <tr>
+            <th scope="col">Instrumento</th>
+            <th scope="col">Peso</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            admision.ponderaciones.map((p) => (
+              <tr>
+                <th scope="row">
+                  {p.prueba}
+                  {p.electiva && <span class="nota"> (electiva)</span>}
+                </th>
+                <td>{p.porcentaje} %</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="nota">{admision.notaPonderaciones}</p>
+    </div>
+
+    <div>
+      <h3>Fechas clave {admision.procesoAdmision} <Cita fuentes={admision.fuentesFechas} /></h3>
+      <ol class="fechas">
+        {
+          admision.fechas.map((fecha) => (
+            <li>
+              <span class="fechas__hito">{fecha.hito}</span>
+              <time datetime={fecha.inicio}>{formatearRango(fecha.inicio, fecha.fin)}</time>
+            </li>
+          ))
+        }
+      </ol>
+
+      <h3>Costos {admision.costos.anio} <Cita fuentes={admision.costos.fuentes} /></h3>
+      <dl class="costos">
+        <div>
+          <dt>Matrícula</dt>
+          <dd>{formatearPesos(admision.costos.matricula)}</dd>
+        </div>
+        <div>
+          <dt>Arancel anual</dt>
+          <dd>{formatearPesos(admision.costos.arancelAnual)}</dd>
+        </div>
+      </dl>
+
+      <p>
+        Dudas: <a href={`mailto:${admision.contacto.correo}`}>{admision.contacto.correo}</a> ·
+        <a href={`tel:${admision.contacto.telefono.replace(/\s/g, '')}`}>{admision.contacto.telefono}</a>
+      </p>
+    </div>
+  </div>
+</Seccion>
+
+<style>
+  .lista-limpia {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--espacio-5);
+  }
+
+  .via__nombre {
+    font-weight: 700;
+    margin-bottom: var(--espacio-1);
+  }
+
+  .admision__columnas {
+    display: grid;
+    gap: var(--espacio-5);
+  }
+
+  .ponderaciones {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--espacio-2);
+    background: var(--color-fondo);
+  }
+
+  .ponderaciones th,
+  .ponderaciones td {
+    padding: var(--espacio-2) var(--espacio-3);
+    border-bottom: 1px solid var(--color-borde);
+    text-align: left;
+  }
+
+  .ponderaciones td {
+    text-align: right;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .ponderaciones tbody th {
+    font-weight: 400;
+  }
+
+  .fechas {
+    padding-left: var(--espacio-4);
+    margin: 0 0 var(--espacio-4);
+  }
+
+  .fechas li {
+    margin-bottom: var(--espacio-2);
+  }
+
+  .fechas__hito {
+    display: block;
+    font-weight: 600;
+  }
+
+  .costos {
+    margin: 0 0 var(--espacio-3);
+  }
+
+  .costos div {
+    display: flex;
+    justify-content: space-between;
+    padding-block: var(--espacio-1);
+    border-bottom: 1px solid var(--color-borde);
+  }
+
+  .costos dd {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  @media (min-width: 48rem) {
+    .admision__columnas {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

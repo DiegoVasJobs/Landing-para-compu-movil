@@ -1,0 +1,91 @@
+---
+/**
+ * LAYOUT BASE
+ * ----------------------------------------------------------------------------
+ * Plantilla común de la página: concentra el <head> (SEO, Open Graph,
+ * idioma), el enlace "saltar al contenido", el encabezado y el pie.
+ * Las páginas solo entregan su contenido mediante <slot />.
+ */
+import Encabezado from '../components/Encabezado.astro';
+import PiePagina from '../components/PiePagina.astro';
+import { obtenerObligatorio } from '../lib/contenido';
+import { rutaPublica } from '../lib/rutas';
+import '../styles/global.css';
+
+/** Props opcionales: si no se entregan, se usan los textos de sitio.json. */
+interface Props {
+  titulo?: string;
+  descripcion?: string;
+}
+
+const sitio = await obtenerObligatorio('sitio', 'general');
+const { titulo = sitio.tituloSeo, descripcion = sitio.descripcionSeo } = Astro.props;
+
+// URL absoluta de esta página (para canonical y Open Graph).
+const urlCanonica = new URL(Astro.url.pathname, Astro.site);
+// URL absoluta de la imagen que aparece al compartir el enlace en redes sociales.
+const urlImagen = new URL(rutaPublica('og-imagen.png'), Astro.site);
+---
+
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="canonical" href={urlCanonica} />
+    <link rel="icon" type="image/svg+xml" href={rutaPublica('favicon.svg')} />
+    <link rel="sitemap" href={rutaPublica('sitemap-index.xml')} />
+    <meta name="theme-color" content="#0b4f8a" />
+
+    <!-- Open Graph: cómo se ve el enlace al compartirlo en redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content={sitio.nombreSitio} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:url" content={urlCanonica} />
+    <meta property="og:image" content={urlImagen} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`Portada: ${sitio.nombreSitio}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <!-- Primer elemento enfocable: permite saltar el menú con el teclado (WCAG 2.4.1). -->
+    <a class="saltar" href="#contenido">Saltar al contenido principal</a>
+    <Encabezado nombreSitio={sitio.nombreSitio} secciones={sitio.secciones} />
+    <main id="contenido" tabindex="-1">
+      <slot />
+    </main>
+    <PiePagina
+      aviso={sitio.aviso}
+      integrantes={sitio.integrantes}
+      asignatura={sitio.asignatura}
+      actualizado={sitio.actualizado}
+    />
+  </body>
+</html>
+
+<style>
+  /* El enlace "saltar" queda oculto hasta que recibe el foco del teclado. */
+  .saltar {
+    position: absolute;
+    left: var(--espacio-3);
+    top: -100px;
+    z-index: 100;
+    padding: var(--espacio-2) var(--espacio-3);
+    background: var(--color-primario);
+    color: #ffffff;
+    border-radius: var(--radio);
+  }
+
+  .saltar:focus {
+    top: var(--espacio-2);
+  }
+
+  main:focus {
+    outline: none;
+  }
+</style>

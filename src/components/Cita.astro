@@ -1,0 +1,53 @@
+---
+/**
+ * CITA BREVE
+ * Muestra enlaces del tipo [F02] que llevan a la entrada correspondiente
+ * de la sección Referencias. Recibe las fuentes ya validadas por el esquema.
+ */
+interface Props {
+  /** Fuentes citadas: objetos con el ID de la referencia (ej. { id: "F02" }). */
+  fuentes: ReadonlyArray<{ id: string }>;
+  /** Año del dato, si corresponde mostrarlo junto a la cita. */
+  anio?: number;
+}
+
+const { fuentes, anio } = Astro.props;
+---
+
+{
+  fuentes.length > 0 && (
+    <span class="cita">
+      {anio !== undefined && <span class="cita__anio">Dato {anio}</span>}
+      {fuentes.map((fuente) => (
+        <a class="cita__enlace" href={`#ref-${fuente.id}`}>
+          <span class="solo-lector">Fuente </span>
+          {fuente.id}
+        </a>
+      ))}
+    </span>
+  )
+}
+
+<style>
+  .cita {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--espacio-1);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .cita__anio {
+    color: var(--color-texto-suave);
+  }
+
+  /* Los corchetes se agregan con CSS para que el lector de pantalla no los lea. */
+  .cita__enlace::before {
+    content: '[';
+  }
+
+  .cita__enlace::after {
+    content: ']';
+  }
+</style>

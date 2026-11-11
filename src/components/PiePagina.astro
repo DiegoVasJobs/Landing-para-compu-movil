@@ -1,0 +1,42 @@
+---
+/**
+ * PIE DE PÁGINA
+ * Aviso de proyecto académico (no oficial), integrantes y fecha de revisión de datos.
+ */
+import { formatearFecha } from '../lib/formato';
+
+interface Props {
+  aviso: string;
+  integrantes: string[];
+  asignatura: string;
+  actualizado: string;
+}
+
+const { aviso, integrantes, asignatura, actualizado } = Astro.props;
+---
+
+<footer class="pie">
+  <div class="contenedor">
+    <p class="pie__aviso">{aviso}</p>
+    <p>
+      Equipo: {integrantes.join(' y ')}. {asignatura}.
+    </p>
+    <p>
+      Datos revisados el <time datetime={actualizado}>{formatearFecha(actualizado)}</time>.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .pie {
+    margin-top: var(--espacio-6);
+    padding-block: var(--espacio-5);
+    background: var(--color-primario-oscuro);
+    color: #ffffff;
+    font-size: 0.95rem;
+  }
+
+  .pie__aviso {
+    font-weight: 600;
+  }
+</style>

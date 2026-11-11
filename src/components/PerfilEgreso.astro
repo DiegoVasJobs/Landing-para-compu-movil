@@ -1,0 +1,44 @@
+---
+/**
+ * PERFIL DE EGRESO
+ * Responde "¿Qué podré hacer?": competencias del perfil oficial,
+ * reescritas en lenguaje claro, cada una con su fuente.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  competencias: CollectionEntry<'perfilEgreso'>[];
+}
+
+const { meta, competencias } = Astro.props;
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
+  <ul class="grilla competencias">
+    {
+      competencias.map(({ data }) => (
+        <li class="tarjeta">
+          <h3>{data.titulo}</h3>
+          <p>{data.descripcion}</p>
+          <Cita fuentes={data.fuentes} />
+        </li>
+      ))
+    }
+  </ul>
+</Seccion>
+
+<style>
+  .competencias {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .competencias p {
+    margin-bottom: var(--espacio-2);
+  }
+</style>

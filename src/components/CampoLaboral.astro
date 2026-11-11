@@ -1,0 +1,75 @@
+---
+/**
+ * CAMPO LABORAL
+ * Responde "¿Dónde trabajaré?": áreas de desempeño (sitio oficial) e
+ * indicadores de Mi Futuro, cada uno con su año y su fuente.
+ */
+import type { CollectionEntry } from 'astro:content';
+import type { SeccionMeta } from '../lib/contenido';
+import Seccion from './Seccion.astro';
+import Cita from './Cita.astro';
+import Etiqueta from './Etiqueta.astro';
+
+interface Props {
+  meta: SeccionMeta;
+  campo: CollectionEntry<'campoLaboral'>['data'];
+}
+
+const { meta, campo } = Astro.props;
+---
+
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
+  <h3>Áreas donde podrás trabajar <Cita fuentes={campo.fuentesAreas} /></h3>
+  <ul class="grilla areas">
+    {
+      campo.areas.map((area) => (
+        <li class="tarjeta">
+          <p class="areas__titulo">{area.titulo}</p>
+          <p>{area.descripcion}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3 class="indicadores__titulo">Indicadores de titulados</h3>
+  <ul class="grilla indicadores">
+    {
+      campo.indicadores.map((indicador) => (
+        <li class="tarjeta indicador">
+          <Etiqueta tipo="dato" />
+          <p class="indicador__valor">{indicador.valor}</p>
+          <p class="indicador__etiqueta">{indicador.etiqueta}</p>
+          <p class="nota">{indicador.detalle}</p>
+          <Cita fuentes={[indicador.fuente]} anio={indicador.anio} />
+        </li>
+      ))
+    }
+  </ul>
+</Seccion>
+
+<style>
+  .areas,
+  .indicadores {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--espacio-5);
+  }
+
+  .areas__titulo {
+    font-weight: 700;
+    margin-bottom: var(--espacio-1);
+  }
+
+  .indicador__valor {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin: var(--espacio-2) 0 0;
+    line-height: 1.2;
+  }
+
+  .indicador__etiqueta {
+    font-weight: 600;
+    margin-bottom: var(--espacio-2);
+  }
+</style>
