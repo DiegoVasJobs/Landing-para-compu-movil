@@ -1,0 +1,46 @@
+# Publicación automática en GitHub Pages.
+# Cada vez que se sube un cambio a la rama main, GitHub compila el sitio y lo publica.
+# Si un dato no cumple su esquema, la compilación falla y NO se publica nada roto.
+name: Publicar sitio en GitHub Pages
+
+on:
+  # Se ejecuta con cada push a la rama principal.
+  push:
+    branches: [main]
+  # Permite ejecutarlo a mano desde la pestaña "Actions" de GitHub.
+  workflow_dispatch:
+
+# Permisos mínimos que necesita GitHub Pages para publicar.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita dos publicaciones simultáneas.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # Paso 1: compilar el sitio (incluye la revisión de tipos y esquemas).
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v7
+      - name: Instalar, revisar y compilar con Astro
+        uses: withastro/action@v6
+        with:
+          node-version: 24
+
+  # Paso 2: publicar lo compilado.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
