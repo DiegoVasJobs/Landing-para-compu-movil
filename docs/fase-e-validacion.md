@@ -1,78 +1,58 @@
-# Fase E · Registro de validación (Producto E)
+# Fase E. Registro de validación
 
 ## 1. Revisión cruzada de afirmaciones
+Cada integrante verifica las cifras del sitio contra la fuente primaria (no la comparte quien la redactó). Completar con fecha y quién revisó.
 
-Cada integrante revisa en la fuente original las afirmaciones que **no** redactó, y anota el resultado.
+| Afirmación en el sitio | Sección | Fuente (ID) | Coincide con la fuente (sí/no) | Revisó | Fecha | Corrección |
+|---|---|---|---|---|---|---|
+| 8 semestres, 240 créditos SCT | Portada / Plan de estudios | F01, F02 | | | | |
+| 150 vacantes, código 21030 | Portada | F01, F02 | | | | |
+| Empleabilidad al 1.er año 87,1 % | Campo laboral | F04, F05 | | | | |
+| Empleabilidad al 2.º año 96,5 % | Campo laboral | F04, F05 | | | | |
+| Ingreso $2,2 a $2,3 millones | Campo laboral | F04, F05 | | | | |
+| Retención 1.er año 90,1 % | Campo laboral | F04, F05 | | | | |
+| Duración real 12,9 semestres | Campo laboral | F04, F05 | | | | |
+| Acreditación institucional 5 años, hasta oct. 2031 | Respaldo | F06, F11 | | | | |
+| Certificación de la carrera 2025 a 2030 | Respaldo | F01 | | | | |
+| Ponderaciones de admisión | Admisión | F01 | | | | |
+| Fechas clave 2027 | Admisión | F07 | | | | |
+| Matrícula $90.000 y arancel $4.763.300 | Admisión / FAQ | F01 | | | | |
 
-> PENDIENTE (Diego y María): abrir cada fuente, comprobar el dato y completar las columnas.
+## 2. Prueba con usuarios (mínimo 3 personas del público objetivo)
 
-| N.° | Afirmación en el sitio | Fuente | ¿Coincide? | Revisado por | Fecha | Corrección aplicada |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | Código DEMRE 21030, 150 vacantes, jornada diurna, Campus Macul | F01 | | | | |
-| 2 | Título: Ingeniera/o en Informática; grado: Licenciada/o en Informática | F01 | | | | |
-| 3 | Duración formal de 8 semestres y 240 créditos SCT | F02 | | | | |
-| 4 | Asignaturas y créditos de cada semestre de la malla | F02 | | | | |
-| 5 | Ing. Civil en Computación (21041) y en Ciencia de Datos (21049) duran 11 semestres | F08, F09 | | | | |
-| 6 | Competencias del perfil de egreso | F01, F03 | | | | |
-| 7 | Empleabilidad 87,1 % (1.er año) y 96,5 % (2.º año) | F04, F05 | | | | |
-| 8 | Ingreso bruto al 4.º año entre $2,2 y $2,3 millones | F04, F05 | | | | |
-| 9 | Retención de 1.er año 90,1 % y duración real 12,9 semestres | F04, F05 | | | | |
-| 10 | Acreditación: 5 años, nivel Avanzado, hasta octubre de 2031, 5 ámbitos | F06, F11, F12 | | | | |
-| 11 | Certificación de la carrera 16-06-2025 a 16-06-2030 | F01 | | | | |
-| 12 | Ponderaciones NEM 10, Ranking 25, CL 20, M1 30, M2 5, electiva 10 | F01 | | | | |
-| 13 | Promedio mínimo de 458 puntos entre CL y M1 | F01 | | | | |
-| 14 | Matrícula $90.000 y arancel $4.763.300 (2026) | F01 | | | | |
-| 15 | Fechas: PAES 30-11 al 02-12-2026; postulación 4 al 7-01-2027; resultados 18-01-2027; matrícula 19 al 21-01-2027 | F07 | | | | |
-| 16 | Vías de ingreso: PAES, Acceso Directo, Programas de inclusión | F10 | | | | |
+Antes de empezar, pedir consentimiento (mismo texto de la Fase B; autorización de tutor si es menor).
 
-## 2. Prueba con usuarios
+**Instrucciones:** "Te pediré que uses la página como si estuvieras decidiendo si postular. Piensa en voz alta. No estoy evaluándote a ti, sino a la página."
 
-**Participantes:** mínimo 3 personas del público objetivo, con consentimiento informado (mismo texto de la Fase B, adaptado a "probar una página web"). Se identifican con código (U1, U2, …).
+**Tareas** (anotar si lo logró sin ayuda, el tiempo aproximado y comentarios):
 
-**Procedimiento:** la persona abre el sitio publicado en su propio celular o computador. Se le lee cada tarea, sin ayudarla, y se anota si la logra, cuánto tarda y qué comenta en voz alta.
+| # | Tarea |
+|---|---|
+| T1 | Encuentra cuántos semestres dura la carrera. |
+| T2 | Encuentra el plan de estudios y qué se ve en el primer año. |
+| T3 | Averigua si la carrera está acreditada y hasta cuándo. |
+| T4 | Averigua cómo postular y en qué fechas. |
+| T5 | Encuentra cuánto cuesta estudiar la carrera. |
+| T6 | Averigua en qué se diferencia de Ingeniería Civil en Computación. |
+| T7 | Dime de dónde sale el dato de empleabilidad. |
 
-### Tareas
+**Registro por participante**
 
-| Tarea | Instrucción | Respuesta correcta |
-| --- | --- | --- |
-| T1 | ¿Cuántos semestres dura la carrera según el plan, y cuánto tardan en la práctica? | 8 semestres; 12,9 en promedio |
-| T2 | ¿Hasta cuándo está acreditada la universidad? | Octubre de 2031 |
-| T3 | ¿Cuánto pondera la prueba de Matemática 1? | 30 % |
-| T4 | ¿En qué fechas se postula a las carreras para 2027? | 4 al 7 de enero de 2027 |
-| T5 | Muestra las asignaturas del tercer año | Semestres 5 y 6 (filtro "Año 3") |
-| T6 | ¿De dónde sale el dato de empleabilidad? | Mi Futuro (F04), sección Referencias |
-
-### Preguntas finales
-
-1. ¿Encontraste respuesta a tus preguntas principales sobre la carrera? (Sí / En parte / No)
-2. Del 1 al 5, ¿qué tan fácil fue entender la página?
-3. ¿Qué cambiarías o qué faltó?
-
-### Registro
-
-> PENDIENTE (Diego y María, tarea M7).
-
-| Usuario | Dispositivo | T1 | T2 | T3 | T4 | T5 | T6 | ¿Encontró respuestas? | Facilidad (1-5) | Comentarios |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Participante (código) | Dispositivo | T1 | T2 | T3 | T4 | T5 | T6 | T7 | ¿Encontró respuesta a su duda principal? | Comentarios |
+|---|---|---|---|---|---|---|---|---|---|---|
 | U1 | | | | | | | | | | |
 | U2 | | | | | | | | | | |
 | U3 | | | | | | | | | | |
 
-Marcar cada tarea como ✔ (lo logró sola), ~ (con dificultad) o ✘ (no lo logró).
+Marcar cada tarea con: ✔ sin ayuda / ~ con dificultad / ✘ no lo logró.
 
 ## 3. Hallazgos y correcciones aplicadas
 
-| N.° | Hallazgo | Usuario(s) | Corrección aplicada | Commit / evidencia |
-| --- | --- | --- | --- | --- |
+| # | Hallazgo (qué pasó y a quién) | Gravedad (alta/media/baja) | Corrección aplicada | Evidencia (commit o captura) |
+|---|---|---|---|---|
 | 1 | | | | |
+| 2 | | | | |
+| 3 | | | | |
 
-## 4. Evidencias de calidad técnica
-
-> PENDIENTE (Diego): guardar capturas en `docs/evidencias/`.
-
-| Herramienta | Resultado | Fecha | Captura |
-| --- | --- | --- | --- |
-| PageSpeed Insights (móvil) | Rendimiento __ · Accesibilidad __ · Buenas prácticas __ · SEO __ | | `evidencias/pagespeed-movil.png` |
-| PageSpeed Insights (escritorio) | Rendimiento __ · Accesibilidad __ · Buenas prácticas __ · SEO __ | | `evidencias/pagespeed-escritorio.png` |
-| CompliaScan | __ / 100 | | `evidencias/compliascan.png` |
-| Vista en 360, 768 y 1280 px | | | `evidencias/responsivo-*.png` |
+## 4. Evidencias
+Capturas de pantalla de la prueba, consentimientos (fuera del repositorio) y commits que aplican cada corrección.
