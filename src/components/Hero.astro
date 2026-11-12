@@ -2,16 +2,26 @@
 /**
  * PORTADA (HERO)
  * Responde "¿Qué es la carrera?": nombre oficial, título, grado,
- * duración, jornada y llamados a la acción.
+ * duración, jornada y llamados a la acción. Muestra además tres cifras
+ * grandes, cada una con su cita.
  */
 import type { CollectionEntry } from 'astro:content';
 import Cita from './Cita.astro';
 
 interface Props {
   carrera: CollectionEntry<'carrera'>['data'];
+  /** Créditos SCT totales del plan (vienen de malla.json). */
+  creditos: number;
+  /** Fuentes del plan de estudios, para citar los créditos. */
+  fuentesCreditos: ReadonlyArray<{ id: string }>;
 }
 
-const { carrera } = Astro.props;
+const { carrera, creditos, fuentesCreditos } = Astro.props;
+
+/** Fuentes de las cifras, sin repetir IDs. */
+const fuentesCifras: ReadonlyArray<{ id: string }> = [
+  ...new Set([...carrera.fuentes, ...fuentesCreditos].map((fuente) => fuente.id)),
+].map((id) => ({ id }));
 
 /** Datos clave que se muestran como lista de definiciones. */
 const datosClave: ReadonlyArray<{ termino: string; valor: string }> = [
@@ -20,13 +30,41 @@ const datosClave: ReadonlyArray<{ termino: string; valor: string }> = [
   { termino: 'Duración formal', valor: `${carrera.duracionSemestres} semestres` },
   { termino: 'Jornada', valor: carrera.jornada },
   { termino: 'Sede', valor: carrera.sede },
-  { termino: 'Código DEMRE', valor: String(carrera.codigoDemre) },
+  { termino: 'Código de postulación', valor: String(carrera.codigoDemre) },
+];
+
+/** Cifras destacadas de la portada. */
+const cifras: ReadonlyArray<{ valor: string; etiqueta: string }> = [
+  { valor: String(carrera.duracionSemestres), etiqueta: 'semestres de duración formal' },
+  { valor: String(creditos), etiqueta: 'créditos en el plan de estudios' },
+  { valor: String(carrera.vacantes), etiqueta: 'vacantes' },
 ];
 ---
 
 <div id="inicio" class="hero">
+  <!-- Ilustración decorativa propia: red de nodos (no contiene información). -->
+  <svg class="hero__red" viewBox="0 0 520 360" aria-hidden="true" focusable="false">
+    <g stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.5" fill="none">
+      <path d="M40 300 L140 220 L250 260 L330 150 L450 190 L490 80"></path>
+      <path d="M140 220 L120 110 L250 70 L330 150"></path>
+      <path d="M250 260 L360 320 L450 190"></path>
+      <path d="M120 110 L40 60"></path>
+    </g>
+    <g fill="#99f6e4" fill-opacity="0.5">
+      <circle cx="40" cy="300" r="6"></circle>
+      <circle cx="140" cy="220" r="8"></circle>
+      <circle cx="250" cy="260" r="6"></circle>
+      <circle cx="330" cy="150" r="9"></circle>
+      <circle cx="450" cy="190" r="6"></circle>
+      <circle cx="490" cy="80" r="7"></circle>
+      <circle cx="120" cy="110" r="6"></circle>
+      <circle cx="250" cy="70" r="5"></circle>
+      <circle cx="360" cy="320" r="5"></circle>
+      <circle cx="40" cy="60" r="5"></circle>
+    </g>
+  </svg>
   <div class="contenedor hero__interior">
-    <div>
+    <div class="hero__texto">
       <p class="hero__antetitulo">{carrera.institucion}</p>
       <h1>{carrera.nombreOficial}</h1>
       <p class="hero__bajada">
@@ -37,6 +75,20 @@ const datosClave: ReadonlyArray<{ termino: string; valor: string }> = [
         <a class="boton" href="#admision">Cómo postular</a>
         <a class="boton boton--secundario" href="#malla">Ver la malla</a>
       </div>
+
+      <ul class="hero__cifras">
+        {
+          cifras.map((cifra) => (
+            <li>
+              <span class="hero__cifra-valor">{cifra.valor}</span>
+              <span class="hero__cifra-etiqueta">{cifra.etiqueta}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="hero__fuentes">
+        Fuentes: <Cita fuentes={fuentesCifras} />
+      </p>
     </div>
 
     <div class="tarjeta hero__ficha">
@@ -54,36 +106,142 @@ const datosClave: ReadonlyArray<{ termino: string; valor: string }> = [
         {carrera.vacantes} vacantes · {carrera.direccion}
         <Cita fuentes={carrera.fuentes} />
       </p>
+      <p class="nota">
+        El código de postulación es el del Departamento de Evaluación, Medición y Registro Educacional (DEMRE).
+      </p>
     </div>
   </div>
 </div>
 
 <style>
   .hero {
+    position: relative;
+    overflow: hidden;
     padding-block: var(--espacio-5);
-    background: linear-gradient(180deg, var(--color-fondo-suave), var(--color-fondo));
+    color: #ffffff;
+    background: linear-gradient(135deg, #083a66 0%, #0b4f8a 62%, #0c6560 135%);
+  }
+
+  /* Círculo decorativo: no contiene información. */
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -8rem;
+    top: -8rem;
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .hero__red {
+    position: absolute;
+    left: -2rem;
+    bottom: -1rem;
+    width: 34rem;
+    max-width: 85%;
+    pointer-events: none;
   }
 
   .hero__interior {
+    position: relative;
     display: grid;
     gap: var(--espacio-4);
   }
 
+  .hero h1 {
+    color: #ffffff;
+  }
+
   .hero__antetitulo {
     font-weight: 600;
-    color: var(--color-acento);
+    color: #99f6e4;
     margin-bottom: var(--espacio-2);
   }
 
   .hero__bajada {
     font-size: 1.15rem;
     max-width: 38rem;
+    color: #e6eef7;
   }
 
   .hero__acciones {
     display: flex;
     flex-wrap: wrap;
     gap: var(--espacio-2);
+  }
+
+  /* Botones sobre fondo oscuro: blanco relleno y blanco contorno. */
+  .hero__texto .boton {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #083a66;
+  }
+
+  .hero__texto .boton:hover {
+    background: #e6eef7;
+    border-color: #e6eef7;
+    color: #083a66;
+  }
+
+  .hero__texto .boton--secundario {
+    background: transparent;
+    color: #ffffff;
+  }
+
+  .hero__texto .boton--secundario:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+  }
+
+  /* El foco naranja global no se ve sobre azul oscuro. */
+  .hero :focus-visible {
+    outline-color: #ffd166;
+  }
+
+  /* Las citas dentro del texto sobre fondo oscuro usan colores claros (contraste AA). */
+  .hero__texto :global(.cita__enlace) {
+    color: #bfe3ff;
+  }
+
+  .hero__texto :global(.cita__anio) {
+    color: #d6e4f2;
+  }
+
+  .hero__cifras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-3) var(--espacio-5);
+    list-style: none;
+    padding: 0;
+    margin: var(--espacio-4) 0 var(--espacio-2);
+  }
+
+  .hero__cifras li {
+    display: grid;
+  }
+
+  .hero__cifra-valor {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    font-weight: 800;
+    line-height: 1;
+    color: #99f6e4;
+  }
+
+  .hero__cifra-etiqueta {
+    font-size: 0.9rem;
+    color: #e6eef7;
+  }
+
+  .hero__fuentes {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #d6e4f2;
+  }
+
+  .hero__ficha {
+    color: var(--color-texto);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
   }
 
   .hero__ficha dl {

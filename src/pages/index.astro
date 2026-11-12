@@ -41,11 +41,11 @@ const s = sitio.secciones;
 ---
 
 <BaseLayout>
-  <Hero carrera={carrera} />
+  <Hero carrera={carrera} creditos={malla.creditosTotales} fuentesCreditos={malla.fuentes} />
   <SobreCarrera meta={buscarSeccion(s, 'sobre')} carrera={carrera} />
   <PerfilEgreso meta={buscarSeccion(s, 'perfil')} competencias={competencias} />
   <Malla meta={buscarSeccion(s, 'malla')} malla={malla} />
-  <CampoLaboral meta={buscarSeccion(s, 'campo-laboral')} campo={campo} />
+  <CampoLaboral meta={buscarSeccion(s, 'campo-laboral')} campo={campo} duracionFormal={carrera.duracionSemestres} />
   <Respaldo meta={buscarSeccion(s, 'respaldo')} items={respaldo} />
   <Admision meta={buscarSeccion(s, 'admision')} admision={admision} />
   <PreguntasFrecuentes meta={buscarSeccion(s, 'preguntas')} preguntas={preguntas} />

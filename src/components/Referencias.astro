@@ -4,6 +4,9 @@
  * Responde "¿De dónde sale esto?": lista de fuentes en APA 7 con fecha
  * de consulta. Cada entrada tiene un ancla (#ref-F01) a la que apuntan
  * las citas breves del resto de la página.
+ * La dirección web de cada fuente aparece como texto (dentro de la
+ * referencia APA) y no como enlace: así cualquiera puede consultarla,
+ * pero la página no deriva a otros sitios.
  */
 import type { CollectionEntry } from 'astro:content';
 import type { SeccionMeta } from '../lib/contenido';
@@ -22,17 +25,13 @@ const { meta, referencias } = Astro.props;
   <ol class="referencias">
     {
       referencias.map(({ id, data }) => (
-        <li id={`ref-${id}`} class="referencia" tabindex="-1">
+        <li id={`ref-${id}`} class={`referencia referencia--${data.tipo}`} tabindex="-1">
           <span class="referencia__id">{id}</span>
           <div>
             <p class="referencia__apa">{data.apa}</p>
             <p class="nota">
               Fuente {data.tipo} · Consultada el{' '}
-              <time datetime={data.fechaConsulta}>{formatearFecha(data.fechaConsulta)}</time> ·{' '}
-              <a href={data.url} rel="external noopener">
-                Abrir fuente {id}
-                <span class="solo-lector"> (sitio externo)</span>
-              </a>
+              <time datetime={data.fechaConsulta}>{formatearFecha(data.fechaConsulta)}</time>
             </p>
           </div>
         </li>
@@ -47,17 +46,24 @@ const { meta, referencias } = Astro.props;
     padding: 0;
     margin: 0;
     display: grid;
-    gap: var(--espacio-3);
+    gap: var(--espacio-2);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
   }
 
   .referencia {
     display: grid;
-    grid-template-columns: 3rem 1fr;
+    grid-template-columns: 2.75rem 1fr;
     gap: var(--espacio-2);
-    padding: var(--espacio-3);
+    padding: var(--espacio-2) var(--espacio-3);
     background: var(--color-fondo);
     border: 1px solid var(--color-borde);
+    border-left: 5px solid var(--color-acento);
     border-radius: var(--radio);
+  }
+
+  /* Las fuentes secundarias se distinguen por color y por el texto "Fuente secundaria". */
+  .referencia--secundaria {
+    border-left-color: var(--etiqueta-interpretacion-texto);
   }
 
   /* Resalta la referencia cuando se llega desde una cita. */
@@ -74,6 +80,7 @@ const { meta, referencias } = Astro.props;
   .referencia__apa {
     /* Las URL largas de APA se cortan para no desbordar en móvil. */
     overflow-wrap: anywhere;
+    font-size: 0.95rem;
     margin-bottom: var(--espacio-1);
   }
 </style>

@@ -11,12 +11,14 @@ interface Props {
   pregunta: string;
   /** Fondo gris suave para alternar secciones y facilitar la lectura. */
   suave?: boolean;
+  /** Banda azul oscuro para dar ritmo visual (texto claro). */
+  oscura?: boolean;
 }
 
-const { id, titulo, pregunta, suave = false } = Astro.props;
+const { id, titulo, pregunta, suave = false, oscura = false } = Astro.props;
 ---
 
-<section id={id} class:list={['seccion', { 'seccion--suave': suave }]} aria-labelledby={`${id}-titulo`}>
+<section id={id} class:list={['seccion', { 'seccion--suave': suave, 'seccion--oscura': oscura }]} aria-labelledby={`${id}-titulo`}>
   <div class="contenedor">
     <h2 id={`${id}-titulo`}>{titulo}</h2>
     <p class="seccion__pregunta">{pregunta}</p>
@@ -31,6 +33,22 @@ const { id, titulo, pregunta, suave = false } = Astro.props;
 
   .seccion--suave {
     background: var(--color-fondo-suave);
+  }
+
+  .seccion--oscura {
+    background: linear-gradient(135deg, #083a66, #0b4f8a);
+  }
+
+  .seccion--oscura h2 {
+    color: #ffffff;
+  }
+
+  .seccion--oscura h2::after {
+    background: #99f6e4;
+  }
+
+  .seccion--oscura .seccion__pregunta {
+    color: #d6e4f2;
   }
 
   .seccion__pregunta {

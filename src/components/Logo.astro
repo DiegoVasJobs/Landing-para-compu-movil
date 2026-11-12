@@ -1,0 +1,23 @@
+---
+/**
+ * LOGO DEL PROYECTO (propio)
+ * Marca sencilla hecha para este trabajo: unos corchetes de código sobre
+ * fondo azul. No usa el logo oficial de la UTEM, que requiere autorización.
+ */
+interface Props {
+  tamano?: number;
+}
+
+const { tamano = 32 } = Astro.props;
+---
+
+<svg viewBox="0 0 32 32" width={tamano} height={tamano} aria-hidden="true" focusable="false">
+  <rect width="32" height="32" rx="8" fill="#0b4f8a"></rect>
+  <path
+    d="M13 11l-5 5 5 5M19 11l5 5-5 5M17.5 9.5l-3 13"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+</svg>

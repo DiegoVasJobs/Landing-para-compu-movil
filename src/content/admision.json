@@ -4,48 +4,102 @@
     "procesoAdmision": 2027,
     "vias": [
       {
-        "nombre": "Acceso vía PAES",
-        "descripcion": "La vía regular: rindes la PAES y postulas con tu puntaje en la plataforma de Acceso Mineduc.",
+        "nombre": "Acceso por la PAES (Prueba de Acceso a la Educación Superior)",
+        "descripcion": "La vía regular. Rindes la PAES y, con tu puntaje, postulas en el portal centralizado hasta a 20 carreras, en orden de preferencia. Tus resultados valen por dos procesos de admisión seguidos.",
         "url": "https://www.utem.cl/admision/admision-acceso-via-paes/",
-        "fuentes": ["F10"]
+        "fuentes": [
+          "F10",
+          "F16"
+        ]
       },
       {
         "nombre": "Acceso directo",
-        "descripcion": "Vía especial de la UTEM con requisitos propios. Revisa las condiciones en su sitio.",
+        "descripcion": "Vía propia de la UTEM, distinta de la PAES. Existen nueve accesos directos con requisitos distintos, por ejemplo Explora Unesco, el Propedéutico o egresados de liceos de la UTEM. La respuesta llega por correo en un plazo de 5 días hábiles.",
         "url": "https://accesodirecto.utem.cl/",
-        "fuentes": ["F10"]
+        "fuentes": [
+          "F14"
+        ]
       },
       {
         "nombre": "Programas de inclusión",
-        "descripcion": "Programas de equidad de la UTEM, como el Propedéutico. Revisa sus requisitos en el sitio oficial.",
+        "descripcion": "Programas de equidad como el Propedéutico y el PACE. En el Propedéutico UTEM hay que estar en el 10 % de mejor rendimiento del liceo seleccionado, pertenecer a los cuatro primeros quintiles y aprobar tres módulos (Lenguaje, Matemáticas y Gestión personal) con 100 % de asistencia. El PACE exige cursar 3.° y 4.° medio en un establecimiento del programa y rendir la PAES.",
         "url": "https://www.utem.cl/admision/programas-de-inclusion-y-equidad/",
-        "fuentes": ["F10"]
+        "fuentes": [
+          "F15"
+        ]
       }
     ],
     "ponderaciones": [
-      { "prueba": "Notas de Enseñanza Media (NEM)", "porcentaje": 10 },
-      { "prueba": "Ranking de notas", "porcentaje": 25 },
-      { "prueba": "Competencia Lectora", "porcentaje": 20 },
-      { "prueba": "Competencia Matemática 1 (M1)", "porcentaje": 30 },
-      { "prueba": "Competencia Matemática 2 (M2)", "porcentaje": 5 },
-      { "prueba": "Electiva de Ciencias", "porcentaje": 10, "electiva": true },
-      { "prueba": "Electiva de Historia y Ciencias Sociales", "porcentaje": 10, "electiva": true }
+      {
+        "prueba": "Notas de Enseñanza Media (NEM)",
+        "porcentaje": 10
+      },
+      {
+        "prueba": "Ranking de notas",
+        "porcentaje": 25
+      },
+      {
+        "prueba": "Competencia Lectora",
+        "porcentaje": 20
+      },
+      {
+        "prueba": "Competencia Matemática 1 (M1)",
+        "porcentaje": 30
+      },
+      {
+        "prueba": "Competencia Matemática 2 (M2)",
+        "porcentaje": 5
+      },
+      {
+        "prueba": "Electiva de Ciencias",
+        "porcentaje": 10,
+        "electiva": true
+      },
+      {
+        "prueba": "Electiva de Historia y Ciencias Sociales",
+        "porcentaje": 10,
+        "electiva": true
+      }
     ],
     "notaPonderaciones": "Debes rendir una de las dos pruebas electivas. Además, necesitas un promedio mínimo de 458 puntos entre Competencia Lectora y Matemática 1.",
-    "fuentesPonderaciones": ["F01"],
-    "fechas": [
-      { "hito": "Rendición PAES Regular", "inicio": "2026-11-30", "fin": "2026-12-02" },
-      { "hito": "Resultados de la PAES", "inicio": "2027-01-04" },
-      { "hito": "Postulación a carreras", "inicio": "2027-01-04", "fin": "2027-01-07" },
-      { "hito": "Resultados de selección", "inicio": "2027-01-18" },
-      { "hito": "Matrícula (primera etapa)", "inicio": "2027-01-19", "fin": "2027-01-21" }
+    "fuentesPonderaciones": [
+      "F01"
     ],
-    "fuentesFechas": ["F07"],
+    "fechas": [
+      {
+        "hito": "Rendición PAES Regular",
+        "inicio": "2026-11-30",
+        "fin": "2026-12-02"
+      },
+      {
+        "hito": "Resultados de la PAES",
+        "inicio": "2027-01-04"
+      },
+      {
+        "hito": "Postulación a carreras",
+        "inicio": "2027-01-04",
+        "fin": "2027-01-07"
+      },
+      {
+        "hito": "Resultados de selección",
+        "inicio": "2027-01-18"
+      },
+      {
+        "hito": "Matrícula (primera etapa)",
+        "inicio": "2027-01-19",
+        "fin": "2027-01-21"
+      }
+    ],
+    "fuentesFechas": [
+      "F07"
+    ],
     "costos": {
       "matricula": 90000,
       "arancelAnual": 4763300,
       "anio": 2026,
-      "fuentes": ["F01"]
+      "fuentes": [
+        "F01"
+      ]
     },
     "contacto": {
       "correo": "postulantes@utem.cl",

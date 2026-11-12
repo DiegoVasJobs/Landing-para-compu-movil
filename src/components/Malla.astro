@@ -30,6 +30,18 @@ const anios: number[] = [...new Set(malla.semestres.map((s) => anioDeSemestre(s.
 
 /** Ciclos presentes en la leyenda, en orden de aparición del JSON. */
 const ciclos = Object.entries(malla.ciclos);
+
+/** Créditos SCT por ciclo formativo, para el gráfico de distribución. */
+const creditosPorCiclo = new Map<string, number>();
+for (const semestre of malla.semestres) {
+  for (const ramo of semestre.asignaturas) {
+    creditosPorCiclo.set(ramo.ciclo, (creditosPorCiclo.get(ramo.ciclo) ?? 0) + ramo.sct);
+  }
+}
+const distribucion = ciclos.map(([codigo, nombre]) => {
+  const sct = creditosPorCiclo.get(codigo) ?? 0;
+  return { codigo, nombre, sct, porcentaje: Math.round((sct / malla.creditosTotales) * 100) };
+});
 ---
 
 <Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta}>
@@ -38,6 +50,27 @@ const ciclos = Object.entries(malla.ciclos);
     <Cita fuentes={malla.fuentes} />
   </p>
   <p class="nota">{malla.explicacionCreditos}</p>
+
+  <div class="distribucion">
+    <h3>¿En qué se van los {malla.creditosTotales} créditos? <Cita fuentes={malla.fuentes} /></h3>
+    <div class="distribucion__barra" aria-hidden="true">
+      {
+        distribucion.map((d) => (
+          <span class={`segmento segmento--${d.codigo}`} style={`flex: ${d.sct}`} />
+        ))
+      }
+    </div>
+    <ul class="distribucion__lista">
+      {
+        distribucion.map((d) => (
+          <li>
+            <span class={`ciclo ciclo--${d.codigo}`}>{d.codigo}</span>
+            {d.nombre}: <strong>{d.sct} SCT</strong> ({d.porcentaje} %)
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 
   <!-- Filtro por año: oculto hasta que el script lo active. -->
   <div class="filtro" data-filtro hidden>
@@ -76,7 +109,7 @@ const ciclos = Object.entries(malla.ciclos);
           </h3>
           <ul class="ramos">
             {semestre.asignaturas.map((ramo) => (
-              <li class="ramo">
+              <li class={`ramo ramo--${ramo.ciclo}`}>
                 <span class={`ciclo ciclo--${ramo.ciclo}`} title={malla.ciclos[ramo.ciclo]}>
                   {ramo.ciclo}
                 </span>
@@ -119,6 +152,55 @@ const ciclos = Object.entries(malla.ciclos);
 </script>
 
 <style>
+  .distribucion {
+    margin-bottom: var(--espacio-4);
+  }
+
+  .distribucion__barra {
+    display: flex;
+    gap: 2px;
+    height: 1.25rem;
+    margin-bottom: var(--espacio-2);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .segmento {
+    display: block;
+    height: 100%;
+    min-width: 4px;
+  }
+
+  .segmento--CCT {
+    background: #0b4f8a;
+  }
+
+  .segmento--CE {
+    background: #0f766e;
+  }
+
+  .segmento--CT {
+    background: #7c3aed;
+  }
+
+  .segmento--PI {
+    background: #d97706;
+  }
+
+  .segmento--PPS {
+    background: #64748b;
+  }
+
+  .distribucion__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1) var(--espacio-4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
   .filtro__titulo {
     font-weight: 600;
     margin-bottom: var(--espacio-2);
@@ -188,6 +270,31 @@ const ciclos = Object.entries(malla.ciclos);
     padding-block: var(--espacio-1);
     border-bottom: 1px solid var(--color-borde);
     font-size: 0.95rem;
+  }
+
+  .ramo {
+    padding-left: var(--espacio-2);
+    border-left: 4px solid var(--color-borde);
+  }
+
+  .ramo--CCT {
+    border-left-color: #0b4f8a;
+  }
+
+  .ramo--CE {
+    border-left-color: #0f766e;
+  }
+
+  .ramo--CT {
+    border-left-color: #7c3aed;
+  }
+
+  .ramo--PI {
+    border-left-color: #d97706;
+  }
+
+  .ramo--PPS {
+    border-left-color: #64748b;
   }
 
   .ramo__sct {

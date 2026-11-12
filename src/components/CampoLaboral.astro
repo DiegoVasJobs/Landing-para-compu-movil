@@ -3,27 +3,54 @@
  * CAMPO LABORAL
  * Responde "¿Dónde trabajaré?": áreas de desempeño (sitio oficial) e
  * indicadores de Mi Futuro, cada uno con su año y su fuente.
+ * Las barras son un apoyo visual: el valor siempre está escrito en texto.
  */
 import type { CollectionEntry } from 'astro:content';
 import type { SeccionMeta } from '../lib/contenido';
 import Seccion from './Seccion.astro';
 import Cita from './Cita.astro';
 import Etiqueta from './Etiqueta.astro';
+import Icono from './Icono.astro';
 
 interface Props {
   meta: SeccionMeta;
   campo: CollectionEntry<'campoLaboral'>['data'];
+  /** Duración formal en semestres, para compararla con la duración real. */
+  duracionFormal: number;
 }
 
-const { meta, campo } = Astro.props;
+const { meta, campo, duracionFormal } = Astro.props;
+
+/** Icono de cada área, según su posición en la lista. */
+const iconosAreas: ReadonlyArray<string> = ['codigo', 'red', 'escudo', 'proyecto'];
+
+/** Convierte "87,1 %" en 87.1. Devuelve undefined si el valor no es un porcentaje. */
+function aPorcentaje(valor: string): number | undefined {
+  const numero = /^(\d+(?:,\d+)?)\s*%$/.exec(valor)?.[1];
+  return numero === undefined ? undefined : Number.parseFloat(numero.replace(',', '.'));
+}
+
+/** Convierte "12,9 semestres" en 12.9. Devuelve undefined si no son semestres. */
+function aSemestres(valor: string): number | undefined {
+  const numero = /^(\d+(?:,\d+)?)\s*semestres$/.exec(valor)?.[1];
+  return numero === undefined ? undefined : Number.parseFloat(numero.replace(',', '.'));
+}
+
+/** Formato chileno de un número con coma decimal. */
+function coma(numero: number): string {
+  return String(numero).replace('.', ',');
+}
 ---
 
 <Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
   <h3>Áreas donde podrás trabajar <Cita fuentes={campo.fuentesAreas} /></h3>
   <ul class="grilla areas">
     {
-      campo.areas.map((area) => (
+      campo.areas.map((area, i) => (
         <li class="tarjeta">
+          <span class="icono-caja">
+            <Icono nombre={iconosAreas[i] ?? 'codigo'} />
+          </span>
           <p class="areas__titulo">{area.titulo}</p>
           <p>{area.descripcion}</p>
         </li>
@@ -34,15 +61,43 @@ const { meta, campo } = Astro.props;
   <h3 class="indicadores__titulo">Indicadores de titulados</h3>
   <ul class="grilla indicadores">
     {
-      campo.indicadores.map((indicador) => (
-        <li class="tarjeta indicador">
-          <Etiqueta tipo="dato" />
-          <p class="indicador__valor">{indicador.valor}</p>
-          <p class="indicador__etiqueta">{indicador.etiqueta}</p>
-          <p class="nota">{indicador.detalle}</p>
-          <Cita fuentes={indicador.fuentes} anio={indicador.anio} />
-        </li>
-      ))
+      campo.indicadores.map((indicador) => {
+        const porcentaje = aPorcentaje(indicador.valor);
+        const semestres = aSemestres(indicador.valor);
+        const maximo = Math.max(semestres ?? 0, duracionFormal);
+        return (
+          <li class="tarjeta indicador">
+            <Etiqueta tipo="dato" />
+            <p class="indicador__valor">{indicador.valor}</p>
+            <p class="indicador__etiqueta">{indicador.etiqueta}</p>
+            {porcentaje !== undefined && (
+              <div class="barra" aria-hidden="true">
+                <span class="barra__relleno" style={`--ancho: ${porcentaje}%`} />
+              </div>
+            )}
+            {semestres !== undefined && (
+              <div class="contraste" aria-hidden="true">
+                <div class="contraste__fila">
+                  <span>Plan formal</span>
+                  <div class="barra">
+                    <span class="barra__relleno barra__relleno--formal" style={`--ancho: ${(duracionFormal / maximo) * 100}%`} />
+                  </div>
+                  <span>{duracionFormal}</span>
+                </div>
+                <div class="contraste__fila">
+                  <span>Real</span>
+                  <div class="barra">
+                    <span class="barra__relleno" style={`--ancho: ${(semestres / maximo) * 100}%`} />
+                  </div>
+                  <span>{coma(semestres)}</span>
+                </div>
+              </div>
+            )}
+            <p class="nota">{indicador.detalle}</p>
+            <Cita fuentes={indicador.fuentes} anio={indicador.anio} />
+          </li>
+        );
+      })
     }
   </ul>
 </Seccion>
@@ -55,9 +110,23 @@ const { meta, campo } = Astro.props;
     margin: 0 0 var(--espacio-5);
   }
 
+  /* 4 áreas: 4 columnas en escritorio. */
+  .areas {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  }
+
   .areas__titulo {
     font-weight: 700;
     margin-bottom: var(--espacio-1);
+  }
+
+  /* 5 indicadores: 3 + 2 en escritorio, sin tarjeta suelta. */
+  .indicadores {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+  }
+
+  .indicador {
+    border-top: 4px solid var(--color-acento);
   }
 
   .indicador__valor {
@@ -71,5 +140,43 @@ const { meta, campo } = Astro.props;
   .indicador__etiqueta {
     font-weight: 600;
     margin-bottom: var(--espacio-2);
+  }
+
+  .barra {
+    height: 0.6rem;
+    margin-bottom: var(--espacio-2);
+    border-radius: 999px;
+    background: var(--color-borde);
+    overflow: hidden;
+  }
+
+  .barra__relleno {
+    display: block;
+    height: 100%;
+    width: var(--ancho);
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-acento), var(--color-primario));
+  }
+
+  .barra__relleno--formal {
+    background: var(--color-texto-suave);
+  }
+
+  .contraste {
+    display: grid;
+    gap: var(--espacio-1);
+    margin-bottom: var(--espacio-2);
+    font-size: 0.85rem;
+  }
+
+  .contraste__fila {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr 2.5rem;
+    align-items: center;
+    gap: var(--espacio-2);
+  }
+
+  .contraste__fila .barra {
+    margin: 0;
   }
 </style>

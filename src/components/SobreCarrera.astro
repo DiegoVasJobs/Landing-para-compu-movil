@@ -60,10 +60,10 @@ const { meta, carrera } = Astro.props;
     </table>
   </div>
 
-  <aside class="tarjeta interpretacion" aria-label="Interpretación del equipo">
+  <div class="tarjeta interpretacion" role="note" aria-label="Interpretación del equipo">
     <Etiqueta tipo={carrera.interpretacion.tipo} />
     <p>{carrera.interpretacion.texto}</p>
-  </aside>
+  </div>
 </Seccion>
 
 <style>

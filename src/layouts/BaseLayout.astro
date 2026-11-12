@@ -60,6 +60,8 @@ const urlImagen = new URL(rutaPublica('og-imagen.png'), Astro.site);
       <slot />
     </main>
     <PiePagina
+      nombreSitio={sitio.nombreSitio}
+      secciones={sitio.secciones}
       aviso={sitio.aviso}
       integrantes={sitio.integrantes}
       asignatura={sitio.asignatura}

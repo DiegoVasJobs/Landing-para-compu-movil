@@ -8,6 +8,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { SeccionMeta } from '../lib/contenido';
 import Seccion from './Seccion.astro';
 import Cita from './Cita.astro';
+import Icono from './Icono.astro';
 
 interface Props {
   meta: SeccionMeta;
@@ -15,13 +16,19 @@ interface Props {
 }
 
 const { meta, competencias } = Astro.props;
+
+/** Icono de cada competencia, según su posición en la lista. */
+const iconos: ReadonlyArray<string> = ['codigo', 'red', 'escudo', 'grafico', 'equipo'];
 ---
 
 <Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
   <ul class="grilla competencias">
     {
-      competencias.map(({ data }) => (
+      competencias.map(({ data }, i) => (
         <li class="tarjeta">
+          <span class="icono-caja">
+            <Icono nombre={iconos[i] ?? 'codigo'} />
+          </span>
           <h3>{data.titulo}</h3>
           <p>{data.descripcion}</p>
           <Cita fuentes={data.fuentes} />
@@ -36,6 +43,12 @@ const { meta, competencias } = Astro.props;
     list-style: none;
     margin: 0;
     padding: 0;
+    /* 5 competencias: 3 + 2 en escritorio, sin tarjeta suelta. */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+  }
+
+  .competencias li {
+    border-top: 4px solid var(--color-primario);
   }
 
   .competencias p {

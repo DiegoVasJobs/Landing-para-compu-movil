@@ -1,29 +1,57 @@
 ---
 /**
  * PIE DE PÁGINA
- * Aviso de proyecto académico (no oficial), integrantes y fecha de revisión de datos.
+ * Tres funciones: (1) aclarar que es un proyecto académico y no el sitio
+ * oficial de la UTEM, (2) permitir saltar a cada sección y volver arriba,
+ * (3) declarar el equipo y la fecha de revisión de los datos (vigencia).
  */
 import { formatearFecha } from '../lib/formato';
+import Logo from './Logo.astro';
 
 interface Props {
+  nombreSitio: string;
   aviso: string;
   integrantes: string[];
   asignatura: string;
   actualizado: string;
+  secciones: ReadonlyArray<{ id: string; menu: string }>;
 }
 
-const { aviso, integrantes, asignatura, actualizado } = Astro.props;
+const { nombreSitio, aviso, integrantes, asignatura, actualizado, secciones } = Astro.props;
 ---
 
 <footer class="pie">
-  <div class="contenedor">
-    <p class="pie__aviso">{aviso}</p>
-    <p>
-      Equipo: {integrantes.join(' y ')}. {asignatura}.
-    </p>
-    <p>
-      Datos revisados el <time datetime={actualizado}>{formatearFecha(actualizado)}</time>.
-    </p>
+  <div class="contenedor pie__interior">
+    <div>
+      <p class="pie__marca">
+        <Logo tamano={28} />
+        <span>{nombreSitio}</span>
+      </p>
+      <p class="pie__aviso">{aviso}</p>
+    </div>
+
+    <nav aria-label="Secciones (pie de página)">
+      <p class="pie__titulo">En esta página</p>
+      <ul class="pie__lista">
+        {
+          secciones.map((seccion) => (
+            <li>
+              <a href={`#${seccion.id}`}>{seccion.menu}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <p class="pie__titulo">Equipo y datos</p>
+      <p>Equipo: {integrantes.join(' y ')}.</p>
+      <p>{asignatura}.</p>
+      <p>
+        Datos revisados el <time datetime={actualizado}>{formatearFecha(actualizado)}</time>.
+      </p>
+      <p><a class="pie__arriba" href="#inicio">Volver arriba ↑</a></p>
+    </div>
   </div>
 </footer>
 
@@ -36,7 +64,55 @@ const { aviso, integrantes, asignatura, actualizado } = Astro.props;
     font-size: 0.95rem;
   }
 
+  .pie__interior {
+    display: grid;
+    gap: var(--espacio-4);
+  }
+
+  .pie__marca {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-2);
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
   .pie__aviso {
-    font-weight: 600;
+    color: #d6e4f2;
+  }
+
+  .pie__titulo {
+    font-weight: 700;
+    margin-bottom: var(--espacio-2);
+  }
+
+  .pie__lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--espacio-3);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pie a {
+    display: inline-block;
+    min-height: 1.5rem;
+    line-height: 1.5rem;
+    color: #bfe3ff;
+  }
+
+  .pie a:hover {
+    color: #ffffff;
+  }
+
+  .pie :focus-visible {
+    outline-color: #ffd166;
+  }
+
+  @media (min-width: 48rem) {
+    .pie__interior {
+      grid-template-columns: 2fr 1.4fr 1.6fr;
+    }
   }
 </style>

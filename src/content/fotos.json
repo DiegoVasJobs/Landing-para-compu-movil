@@ -1,0 +1,12 @@
+[
+  {
+    "id": "campus",
+    "archivo": "img/campus-1280.webp",
+    "archivoMenor": "img/campus-640.webp",
+    "ancho": 1280,
+    "alto": 770,
+    "anchoMenor": 640,
+    "alt": "Edificio de la universidad con una fachada de bloques de madera y vidrio, junto a un patio con rampa, plantas y bancas.",
+    "credito": "Foto propia: María García Huarca, 2026."
+  }
+]

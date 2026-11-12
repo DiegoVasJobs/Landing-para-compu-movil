@@ -34,12 +34,22 @@ const { fuentes, anio } = Astro.props;
     flex-wrap: wrap;
     align-items: baseline;
     gap: var(--espacio-1);
+    margin-inline-start: var(--espacio-1);
     font-size: 0.85rem;
     white-space: nowrap;
   }
 
   .cita__anio {
     color: var(--color-texto-suave);
+  }
+
+  /* Objetivo táctil mínimo de 24 x 24 px (WCAG 2.5.8). */
+  .cita__enlace {
+    display: inline-block;
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
   }
 
   /* Los corchetes se agregan con CSS para que el lector de pantalla no los lea. */

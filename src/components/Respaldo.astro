@@ -4,11 +4,12 @@
  * Responde "¿Qué garantías hay?": acreditación, certificación de la
  * carrera, plan oficial y (cuando se agregue) cuerpo académico.
  */
-import type { CollectionEntry } from 'astro:content';
+import { getEntry, type CollectionEntry } from 'astro:content';
 import type { SeccionMeta } from '../lib/contenido';
 import Seccion from './Seccion.astro';
 import Cita from './Cita.astro';
 import Etiqueta from './Etiqueta.astro';
+import { rutaPublica } from '../lib/rutas';
 
 interface Props {
   meta: SeccionMeta;
@@ -16,9 +17,12 @@ interface Props {
 }
 
 const { meta, items } = Astro.props;
+
+// Foto propia del campus (fotos.json exige texto alternativo y crédito).
+const foto = (await getEntry('fotos', 'campus'))?.data;
 ---
 
-<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta}>
+<Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} oscura>
   <ul class="grilla respaldo">
     {
       items.map(({ data }) => (
@@ -32,6 +36,24 @@ const { meta, items } = Astro.props;
       ))
     }
   </ul>
+
+  {
+    foto && (
+      <figure class="campus">
+        <img
+          src={rutaPublica(foto.archivo)}
+          srcset={`${rutaPublica(foto.archivoMenor)} ${foto.anchoMenor}w, ${rutaPublica(foto.archivo)} ${foto.ancho}w`}
+          sizes="(min-width: 72rem) 70rem, 100vw"
+          width={foto.ancho}
+          height={foto.alto}
+          alt={foto.alt}
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>{foto.credito}</figcaption>
+      </figure>
+    )
+  }
 </Seccion>
 
 <style>
@@ -39,6 +61,23 @@ const { meta, items } = Astro.props;
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  .campus {
+    margin: var(--espacio-5) 0 0;
+  }
+
+  .campus img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radio);
+  }
+
+  .campus figcaption {
+    margin-top: var(--espacio-2);
+    font-size: 0.9rem;
+    color: #d6e4f2;
   }
 
   .respaldo__titulo {

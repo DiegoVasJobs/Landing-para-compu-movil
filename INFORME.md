@@ -22,7 +22,7 @@
 
 Construimos una página web de una sola vista que presenta la carrera Ingeniería en Informática (código DEMRE 21030, Campus Macul) a estudiantes de 3.° y 4.° medio, a sus familias y a personas de 20 años o más que buscan estudiar o cambiar de carrera.
 
-La regla que guió todo el trabajo fue: **ninguna cifra sin su fuente**. Cada dato del sitio muestra su año y un enlace a la fuente oficial de donde salió. El sistema está construido para que sea imposible publicar un dato que cite una fuente inexistente.
+La regla que guió todo el trabajo fue: **ninguna cifra sin su fuente**. Cada dato del sitio muestra su año y una cita [Fnn] que lleva a la sección Referencias, donde está la dirección completa de la fuente oficial (como texto, para que la página no derive a otros sitios). El sistema está construido para que sea imposible publicar un dato que cite una fuente inexistente.
 
 Primero investigamos y planificamos el contenido (fases A a E). Solo después diseñamos y programamos el sitio.
 
@@ -63,7 +63,7 @@ La página sigue el recorrido de alguien que no conoce la carrera: **qué es →
 | 5 | Campo laboral | ¿Dónde trabajaré? |
 | 6 | Respaldo institucional | ¿Qué garantías hay? |
 | 7 | Admisión | ¿Cómo postulo? |
-| 8 | Preguntas frecuentes | Dudas reales de la encuesta |
+| 8 | Preguntas frecuentes | Dudas frecuentes de postulantes (se reordenan con la encuesta) |
 | 9 | Referencias | ¿De dónde sale cada dato? |
 
 > PENDIENTE: justificar el orden con los resultados de la Fase B.
@@ -129,6 +129,7 @@ Los textos no están escritos dentro del código. Están en archivos de datos se
 - **Anexo C.** [Mapa de contenidos y wireframes](docs/fase-c-mapa-contenidos.md)
 - **Anexo D.** [Registro de validación](docs/fase-e-validacion.md)
 - **Anexo E.** Evidencia técnica: pruebas de que la publicación se detiene ante datos inválidos (ver abajo)
+- **Anexo F.** [Declaración de uso de IA](docs/anexo-f-declaracion-ia.md)
 
 ### Anexo E. Evidencia técnica de validación de datos
 

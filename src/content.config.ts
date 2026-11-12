@@ -240,7 +240,7 @@ const faq = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/faq' }),
   schema: z.object({
     pregunta: z.string(),
-    /** Orden de aparición: viene de la prioridad detectada en la encuesta (Fase B). */
+    /** Orden de aparición. Cuando termine la encuesta (Fase B), se reordena según la frecuencia de cada duda. */
     orden: z.number().int().positive(),
     tipo: tipoContenido.default('dato'),
     /** Una respuesta puede no tener cifras (por eso la lista puede venir vacía). */
@@ -290,6 +290,20 @@ const sitio = defineCollection({
   }),
 });
 
+/** Fotos propias. El esquema exige texto alternativo y crédito (requisito de la pauta). */
+const fotos = defineCollection({
+  loader: file('src/content/fotos.json'),
+  schema: z.object({
+    archivo: z.string(),
+    archivoMenor: z.string(),
+    ancho: z.number().int().positive(),
+    alto: z.number().int().positive(),
+    anchoMenor: z.number().int().positive(),
+    alt: z.string().min(20),
+    credito: z.string().min(5),
+  }),
+});
+
 /** Exportamos todas las colecciones para que Astro las registre. */
 export const collections = {
   sitio,
@@ -301,4 +315,5 @@ export const collections = {
   respaldo,
   admision,
   faq,
+  fotos,
 };

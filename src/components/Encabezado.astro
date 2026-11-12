@@ -5,6 +5,7 @@
  * Sin JavaScript: en móvil el menú se desplaza horizontalmente.
  */
 import type { CollectionEntry } from 'astro:content';
+import Logo from './Logo.astro';
 
 interface Props {
   nombreSitio: string;
@@ -16,7 +17,13 @@ const { nombreSitio, secciones } = Astro.props;
 
 <header class="encabezado">
   <div class="contenedor encabezado__interior">
-    <a class="encabezado__marca" href="#inicio">{nombreSitio}</a>
+    <div class="encabezado__fila">
+      <a class="encabezado__marca" href="#inicio">
+        <Logo tamano={28} />
+        <span>{nombreSitio}</span>
+      </a>
+      <a class="boton encabezado__cta" href="#admision">Cómo postular</a>
+    </div>
     <nav aria-label="Secciones de la página">
       <ul class="encabezado__menu">
         {
@@ -47,7 +54,24 @@ const { nombreSitio, secciones } = Astro.props;
     padding-block: var(--espacio-2);
   }
 
+  .encabezado__fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacio-2);
+  }
+
+  .encabezado__cta {
+    padding: 0.35rem 0.9rem;
+    min-height: 2.25rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
   .encabezado__marca {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-2);
     font-weight: 700;
     color: var(--color-primario-oscuro);
     text-decoration: none;
@@ -86,6 +110,15 @@ const { nombreSitio, secciones } = Astro.props;
 
     .encabezado__menu {
       padding: 0;
+    }
+
+    /* En escritorio la fila se "disuelve": marca, menú y botón quedan en una sola línea. */
+    .encabezado__fila {
+      display: contents;
+    }
+
+    .encabezado__cta {
+      order: 2;
     }
   }
 </style>

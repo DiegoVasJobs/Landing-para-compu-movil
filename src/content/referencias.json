@@ -86,5 +86,29 @@
     "url": "https://www.uestatales.cl/la-utem-se-acredita-en-nivel-avanzado-y-suma-ambito-de-investigacion/",
     "anioDato": 2026,
     "fechaConsulta": "2026-11-11"
+  },
+  {
+    "id": "F14",
+    "tipo": "primaria",
+    "apa": "Universidad Tecnológica Metropolitana. (s.f.). Acceso Directo UTEM. Recuperado el 12 de noviembre de 2026, de https://accesodirecto.utem.cl/",
+    "url": "https://accesodirecto.utem.cl/",
+    "anioDato": 2026,
+    "fechaConsulta": "2026-11-12"
+  },
+  {
+    "id": "F15",
+    "tipo": "primaria",
+    "apa": "Universidad Tecnológica Metropolitana. (s.f.). Programas de inclusión y acceso a la educación superior. Recuperado el 12 de noviembre de 2026, de https://www.utem.cl/admision/programas-de-inclusion-y-equidad/",
+    "url": "https://www.utem.cl/admision/programas-de-inclusion-y-equidad/",
+    "anioDato": 2026,
+    "fechaConsulta": "2026-11-12"
+  },
+  {
+    "id": "F16",
+    "tipo": "primaria",
+    "apa": "Universidad Tecnológica Metropolitana. (s.f.). Preguntas frecuentes de admisión. Recuperado el 12 de noviembre de 2026, de https://www.utem.cl/admision/preguntas-frecuentes/",
+    "url": "https://www.utem.cl/admision/preguntas-frecuentes/",
+    "anioDato": 2026,
+    "fechaConsulta": "2026-11-12"
   }
 ]
