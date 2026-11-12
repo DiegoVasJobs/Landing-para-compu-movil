@@ -27,6 +27,21 @@ Antes de empezar, pedir consentimiento (mismo texto de la Fase B; autorización 
 
 **Tareas** (anotar si lo logró sin ayuda, el tiempo aproximado y comentarios):
 
+**Consentimiento (se lee en voz alta antes de empezar):**
+
+> Somos estudiantes de la UTEM y estamos probando una página web sobre la carrera Ingeniería en Informática, hecha para la asignatura EFE685. **No te estamos evaluando a ti, sino a la página**: si algo te cuesta, es un problema de la página. La prueba dura unos 10 minutos. Anotaremos qué tareas logras y tus comentarios, sin tu nombre: en el informe aparecerás como U1, U2 o U3. Tu participación es voluntaria y puedes detenerte cuando quieras. El docente de la asignatura puede pedir verificar que la prueba fue real. ¿Aceptas participar?
+
+El "sí" queda registrado por escrito (mensaje de WhatsApp o correo de la persona aceptando). Ese respaldo se guarda en el Drive del equipo y **no se sube al repositorio**.
+
+**Guion para quien modera:**
+
+1. Pedir que abra el enlace en su propio dispositivo y anotar cuál usa.
+2. Leer cada tarea **tal cual**, una a la vez. No señalar dónde está la respuesta ni explicar la página.
+3. Pedirle que piense en voz alta ("cuéntame qué vas mirando").
+4. Si después de 2 minutos no encuentra la respuesta, pasar a la siguiente tarea y marcarla ✘.
+5. Al terminar, preguntar: "¿Encontraste respuesta a tu duda principal sobre la carrera?" y "¿Qué cambiarías o qué faltó?". Agradecer.
+6. Recién al final se pueden responder sus dudas sobre la carrera.
+
 | # | Tarea |
 |---|---|
 | T1 | Encuentra cuántos semestres dura la carrera. |

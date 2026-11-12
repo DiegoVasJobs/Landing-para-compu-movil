@@ -162,6 +162,48 @@ Ambos integrantes buscamos información por separado y luego la discutimos junto
 | Diego Vásquez Castillo | Diseño del sitio. Búsqueda de información y definición de los contenidos junto con María. Elaboración y aplicación de las encuestas de la Fase B. |
 | María García Huarca | Diseño del sitio. Búsqueda de información y definición de los contenidos junto con Diego. |
 
+## 11. Glosario
+
+Términos ordenados alfabéticamente, explicados para lectores sin formación técnica.
+
+| Término | Definición | En este proyecto |
+| --- | --- | --- |
+| Accesibilidad | Cualidad de un sitio que permite usarlo a personas con discapacidad visual, auditiva, motora o cognitiva. | Se siguió la norma WCAG 2.2, nivel AA. |
+| Acreditación | Certificación pública de que una institución o carrera cumple estándares de calidad durante un período de años. | Sección Respaldo institucional. |
+| APA 7 | Séptima edición de las normas de la American Psychological Association para citar fuentes. | Formato de la sección Referencias y de la matriz de fuentes. |
+| Arquitectura de información | Organización y orden del contenido para que el usuario encuentre lo que busca. | Orden de las 9 secciones (Fase C). |
+| Astro | Herramienta para construir sitios web que entrega páginas HTML listas y el mínimo de JavaScript. | Tecnología con la que se construyó el sitio. |
+| Build (compilación) | Proceso que transforma el código en los archivos finales que se publican. | Se detiene si un dato no cumple su esquema. |
+| CNA | Comisión Nacional de Acreditación, organismo público que acredita instituciones y carreras en Chile. | Fuente de la acreditación institucional. |
+| Colección de contenido | Conjunto de archivos de datos del mismo tipo que Astro lee y valida automáticamente. | Malla, campo laboral, preguntas frecuentes, referencias y otras. |
+| Commit | Registro de un cambio guardado en el repositorio, con autor, fecha y descripción. | Evidencia del aporte de cada integrante. |
+| Componente | Pieza reutilizable de una página web, como una tarjeta o una sección. | Un componente por sección del sitio. |
+| DEMRE | Departamento de Evaluación, Medición y Registro Educacional, a cargo del proceso de admisión. | Fuente de las fechas de admisión 2027. |
+| Empleabilidad | Porcentaje de titulados que obtiene ingresos de al menos el sueldo mínimo tras un período desde la titulación. | Dato de Mi Futuro en la sección Campo laboral. |
+| Esquema | Regla que define qué campos y tipos de dato debe tener un archivo. | Impide publicar datos incompletos o mal escritos. |
+| Fuente primaria | Documento emitido por quien produce o es responsable del dato. | Por ejemplo, la resolución de la malla o Mi Futuro. |
+| Fuente secundaria | Documento que interpreta, resume o comenta datos producidos por otros. | Solo se usó como complemento. |
+| GitHub Pages | Servicio gratuito de GitHub que publica sitios web a partir de un repositorio. | Lugar donde está publicada la página. |
+| Landing page | Página web de una sola vista con un objetivo concreto, como informar y motivar una postulación. | Producto final del proyecto. |
+| Lighthouse | Herramienta de Google que mide rendimiento, accesibilidad, buenas prácticas y SEO, de 0 a 100. | Usada mediante PageSpeed Insights. |
+| Malla curricular | Representación del plan de estudios: asignaturas por semestre. | Sección Plan de estudios. |
+| Mi Futuro | Portal del Ministerio de Educación con datos de empleabilidad, ingresos y duración de carreras. | Fuente de los indicadores laborales. |
+| NEM | Notas de Enseñanza Media: promedio de notas convertido a puntaje. | Ponderación de admisión. |
+| Open Graph | Metadatos que definen cómo se ve un enlace al compartirlo en redes sociales. | Título, descripción e imagen al compartir la página. |
+| PAES | Prueba de Acceso a la Educación Superior. | Vía regular de admisión. |
+| Perfil de egreso | Declaración oficial de lo que sabrá hacer quien se titula. | Sección Perfil de egreso, en lenguaje claro. |
+| Perfil de usuario (persona) | Descripción de un usuario representativo construida con datos reales de la audiencia. | Resultado de la encuesta (Fase B). |
+| Repositorio | Espacio donde se guarda el código y su historial de cambios. | https://github.com/DiegoVasJobs/Landing-para-compu-movil |
+| Responsivo | Diseño que se adapta a distintos tamaños de pantalla. | Revisado en 360, 768 y 1280 píxeles de ancho. |
+| SCT | Sistema de Créditos Transferibles de Chile; mide toda la carga de trabajo del estudiante. | 240 créditos SCT en la malla. |
+| SEO | Prácticas que ayudan a que una página aparezca bien en buscadores como Google. | Título, descripción, sitemap e idioma. |
+| SIES | Servicio de Información de Educación Superior del Ministerio de Educación. | Produce los datos que publica Mi Futuro. |
+| Sitio estático | Sitio cuyas páginas se generan una vez y se entregan iguales a todos, sin base de datos. | Tipo de sitio construido. |
+| Trazabilidad | Posibilidad de seguir una afirmación hasta su origen verificable. | Cada cifra enlaza a su fuente en Referencias. |
+| TypeScript | Lenguaje que agrega tipos de datos a JavaScript para detectar errores antes de publicar. | Usado en modo estricto. |
+| WCAG | Pautas internacionales de accesibilidad web del W3C. | Versión 2.2, nivel AA. |
+| Wireframe | Boceto simple que muestra la ubicación de los elementos de una página, sin diseño final. | Bocetos de móvil y escritorio (Fase C). |
+
 ---
 
 ## Anexos
