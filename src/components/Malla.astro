@@ -102,7 +102,7 @@ const distribucion = ciclos.map(([codigo, nombre]) => {
       malla.semestres.map((semestre) => (
         <li class="tarjeta semestre" data-anio={String(anioDeSemestre(semestre.numero))}>
           <h3>
-            Semestre {semestre.numero}
+            Año {anioDeSemestre(semestre.numero)} · Semestre {semestre.numero}
             <span class="nota">
               · {semestre.asignaturas.reduce((total, ramo) => total + ramo.sct, 0)} SCT
             </span>

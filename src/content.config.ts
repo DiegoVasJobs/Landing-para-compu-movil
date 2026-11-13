@@ -158,6 +158,8 @@ const campoLaboral = defineCollection({
   schema: z.object({
     areas: z.array(z.object({ titulo: z.string(), descripcion: z.string() })).min(1),
     fuentesAreas: fuentes,
+    /** Nombre de la fuente de los indicadores, escrito en texto (no solo como cita [F04]). */
+    notaFuente: z.string(),
     indicadores: z
       .array(
         z.object({
@@ -216,7 +218,15 @@ const admision = defineCollection({
       notaPonderaciones: z.string(),
       fuentesPonderaciones: fuentes,
       fechas: z
-        .array(z.object({ hito: z.string(), inicio: z.iso.date(), fin: z.iso.date().optional() }))
+        .array(
+          z.object({
+            hito: z.string(),
+            inicio: z.iso.date(),
+            fin: z.iso.date().optional(),
+            /** true para mostrarla en un aviso destacado al inicio de Admisión (hallazgo de la prueba con usuarios). */
+            destacada: z.boolean().default(false),
+          }),
+        )
         .min(1),
       fuentesFechas: fuentes,
       costos: z.object({ matricula: z.number().int(), arancelAnual: z.number().int(), anio, fuentes }),

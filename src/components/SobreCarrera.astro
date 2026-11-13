@@ -34,9 +34,9 @@ const { meta, carrera } = Astro.props;
       <tbody>
         <tr class="comparacion__destacada">
           <th scope="row">{carrera.nombreOficial} ({carrera.codigoDemre})</th>
-          <td>{carrera.duracionSemestres} semestres</td>
-          <td>{carrera.grado}</td>
-          <td>
+          <td data-etiqueta="Duración">{carrera.duracionSemestres} semestres</td>
+          <td data-etiqueta="Grado">{carrera.grado}</td>
+          <td data-etiqueta="Enfoque">
             {carrera.proposito.texto}
             <Cita fuentes={carrera.proposito.fuentes} />
           </td>
@@ -47,9 +47,9 @@ const { meta, carrera } = Astro.props;
               <th scope="row">
                 {afin.nombre} ({afin.codigoDemre})
               </th>
-              <td>{afin.duracionSemestres} semestres</td>
-              <td>{afin.grado}</td>
-              <td>
+              <td data-etiqueta="Duración">{afin.duracionSemestres} semestres</td>
+              <td data-etiqueta="Grado">{afin.grado}</td>
+              <td data-etiqueta="Enfoque">
                 {afin.enfoque}
                 <Cita fuentes={afin.fuentes} />
               </td>
@@ -100,6 +100,49 @@ const { meta, carrera } = Astro.props;
 
   .comparacion__destacada {
     background: var(--etiqueta-dato-fondo);
+  }
+
+  /*
+   * En celulares (menos de 48rem) la tabla se muestra como tarjetas apiladas:
+   * cada carrera es una tarjeta y cada dato lleva su etiqueta (data-etiqueta).
+   * Corrección de la prueba con usuarios: la tabla ancha era incómoda en el celular.
+   */
+  @media (max-width: 47.99rem) {
+    .comparacion {
+      min-width: 0;
+    }
+
+    .comparacion thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .comparacion tr {
+      display: block;
+      margin-bottom: var(--espacio-3);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radio);
+      background: var(--color-fondo);
+    }
+
+    .comparacion th,
+    .comparacion td {
+      display: block;
+      border-bottom: none;
+    }
+
+    .comparacion tbody th {
+      font-size: 1.05rem;
+      border-bottom: 1px solid var(--color-borde);
+    }
+
+    .comparacion td::before {
+      content: attr(data-etiqueta) ': ';
+      font-weight: 700;
+    }
   }
 
   .interpretacion {

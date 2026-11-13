@@ -20,6 +20,7 @@
       }
     ],
     "fuentesAreas": ["F01", "F03"],
+    "notaFuente": "Fuente de estos indicadores: Mi Futuro, portal del Ministerio de Educación con datos del Servicio de Información de Educación Superior (SIES).",
     "indicadores": [
       {
         "id": "empleabilidad-1",

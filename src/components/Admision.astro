@@ -20,9 +20,27 @@ const { meta, admision } = Astro.props;
 
 /** Icono de cada vía de ingreso, según su posición en la lista. */
 const iconosVias: ReadonlyArray<string> = ['examen', 'puerta', 'corazon'];
+
+/**
+ * Fechas marcadas como destacadas en admision.json. Se muestran al inicio de la
+ * sección porque en la prueba con usuarios nadie encontró las fechas de postulación.
+ */
+const fechasDestacadas = admision.fechas.filter((fecha) => fecha.destacada);
 ---
 
 <Seccion id={meta.id} titulo={meta.titulo} pregunta={meta.pregunta} suave>
+  {
+    fechasDestacadas.map((fecha) => (
+      <p class="aviso-fecha">
+        <strong>
+          {fecha.hito} {admision.procesoAdmision}:
+        </strong>{' '}
+        <time datetime={fecha.inicio}>{formatearRango(fecha.inicio, fecha.fin)}</time>{' '}
+        <Cita fuentes={admision.fuentesFechas} />
+      </p>
+    ))
+  }
+
   <h3>Vías de ingreso</h3>
   <ul class="grilla lista-limpia">
     {
@@ -105,6 +123,17 @@ const iconosVias: ReadonlyArray<string> = ['examen', 'puerta', 'corazon'];
     list-style: none;
     padding: 0;
     margin: 0 0 var(--espacio-5);
+  }
+
+  /* Aviso destacado con la fecha de postulación. */
+  .aviso-fecha {
+    margin: 0 0 var(--espacio-4);
+    padding: var(--espacio-3) var(--espacio-4);
+    border-left: 5px solid var(--color-acento);
+    border-radius: var(--radio);
+    background: var(--color-fondo);
+    font-size: 1.1rem;
+    box-shadow: 0 1px 2px rgba(11, 79, 138, 0.06), 0 8px 20px rgba(11, 79, 138, 0.06);
   }
 
   .via__nombre {

@@ -2,9 +2,9 @@
   {
     "id": "acreditacion-institucional",
     "orden": 1,
-    "titulo": "Acreditación institucional",
-    "valorDestacado": "5 años · nivel Avanzado",
-    "descripcion": "La UTEM está acreditada hasta octubre de 2031 en sus cinco ámbitos: docencia, gestión, aseguramiento de la calidad, vinculación con el medio e investigación.",
+    "titulo": "Acreditación de la universidad",
+    "valorDestacado": "Hasta octubre de 2031",
+    "descripcion": "La UTEM tiene acreditación institucional de nivel Avanzado por 5 años, hasta octubre de 2031, en sus cinco ámbitos: docencia, gestión, aseguramiento de la calidad, vinculación con el medio e investigación.",
     "tipo": "dato",
     "anio": 2026,
     "fuentes": [
@@ -16,7 +16,7 @@
     "id": "certificacion-carrera",
     "orden": 2,
     "titulo": "Certificación de la carrera",
-    "valorDestacado": "5 años · 2025 a 2030",
+    "valorDestacado": "Hasta junio de 2030",
     "descripcion": "La carrera está certificada desde el 16 de junio de 2025 hasta el 16 de junio de 2030 por la Agencia Acreditadora de Chile y por el Consejo Nacional de Acreditación en Informática y Computación (CONAIC), de México.",
     "tipo": "dato",
     "anio": 2025,
