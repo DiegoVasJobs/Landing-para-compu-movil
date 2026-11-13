@@ -72,7 +72,6 @@ src/
 ├── pages/index.astro   # La página: une todas las secciones
 └── styles/global.css   # Colores, tipografía y diseño responsivo
 public/                 # Ícono, imagen para redes sociales y fotos propias (img/)
-evidencias/             # Capturas de PageSpeed y CompliaScan
 INFORME.md              # Informe del proyecto, con todos los anexos (fuentes, encuesta, validación, código)
 ```
 

@@ -136,7 +136,7 @@ A partir de esto aplicamos cinco correcciones: la fecha de término de la acredi
 
 ### Resultados de calidad
 
-Mediciones sobre el sitio publicado, realizadas el 12 de noviembre de 2026. Las capturas están en la carpeta `evidencias/` del repositorio.
+Mediciones sobre el sitio publicado, realizadas el 12 de noviembre de 2026. El equipo conserva las capturas de cada medición como respaldo, disponibles para el docente.
 
 | Herramienta | Resultado |
 | --- | --- |
