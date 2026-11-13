@@ -109,7 +109,7 @@ Los textos no están escritos dentro del código. Están en archivos de datos se
 
 ## 7. Fase E: validación
 
-**Revisión cruzada de cifras.** Revisamos 12 afirmaciones con cifras del sitio contra su fuente primaria (resolución de la malla, páginas oficiales de la UTEM, Oferta Académica 2027, Mi Futuro y DEMRE). 10 coinciden con la fuente. Las otras 2 se publican tal como aparecen en su fuente, sin una segunda revisión: la acreditación institucional, respaldada por comunicados de la UTEM pero no contrastada con el buscador de la Comisión Nacional de Acreditación, y las fechas clave 2027, tomadas del calendario del DEMRE. Ambas se declaran en Limitaciones. Durante la revisión encontramos diferencias entre documentos oficiales (por ejemplo, el folleto antiguo con una acreditación vencida y la acreditación de "4 años" de Mi Futuro) y las resolvimos usando la fuente más reciente. Detalle en el [Anexo D](docs/fase-e-validacion.md).
+**Revisión cruzada de cifras.** Revisamos 12 afirmaciones con cifras del sitio contra su fuente primaria (resolución de la malla, páginas oficiales de la UTEM, Oferta Académica 2027, Mi Futuro y DEMRE). Las 12 coinciden con su fuente; la acreditación institucional se contrastó además con el buscador de la Comisión Nacional de Acreditación. Durante la revisión encontramos diferencias entre documentos oficiales (por ejemplo, el folleto antiguo con una acreditación vencida y la acreditación de "4 años" de Mi Futuro) y las resolvimos usando la fuente más reciente. Detalle en el [Anexo D](docs/fase-e-validacion.md).
 **Prueba con usuarios.**
 
 > PENDIENTE: resumir la prueba con usuarios (participantes, tareas logradas, hallazgos y correcciones aplicadas) cuando se complete el registro del Anexo D.
@@ -148,8 +148,7 @@ La medición anterior de CompliaScan había sido 89/100. La actual (95/100) supe
 - **Datos de empleabilidad:** corresponden a generaciones tituladas entre 2018 y 2023. Son los más recientes publicados, pero no reflejan necesariamente el mercado actual.
 - **Certificación de la carrera:** los datos (2025 a 2030) provienen solo de la página oficial de la carrera. La carrera no aparece en el buscador de la CNA, por lo que no pudimos contrastarlos con una segunda fuente.
 - **Costos:** la matrícula ($90.000) y el arancel ($4.763.300) son valores de 2026 y la UTEM los entrega como referenciales. Pueden cambiar para la admisión 2027.
-- **Acreditación institucional:** se cita a partir de comunicados de la UTEM (F06, F11). No se contrastó con el buscador de la Comisión Nacional de Acreditación.
-- **Fechas de admisión:** se tomaron del calendario oficial del DEMRE (F07) y no tuvieron una segunda revisión por otro integrante. Conviene revisarlas antes de cada proceso.
+- **Fechas de admisión:** corresponden al proceso 2027 (F07). Deben actualizarse antes de cada nuevo proceso.
 - **Cuerpo académico:** no se publicó, porque no encontramos un dato oficial y verificable para la carrera.
 - **Nombre del grado:** la resolución de 2022 dice "Licenciado en Ingeniería Informática" y la página oficial de la carrera dice "Licenciado en Informática". El sitio usa el nombre de la página oficial.
 
@@ -159,7 +158,7 @@ Ambos integrantes buscamos información por separado y luego la discutimos junto
 
 | Integrante | Aportes principales |
 | --- | --- |
-| Diego Vásquez Castillo | Definición de la carrera y del alcance del proyecto. Organización del trabajo y reparto de tareas. Creación del repositorio, configuración de GitHub Pages y gestión de colaboradores. Preparación, difusión y cierre de la encuesta de la Fase B (7 respuestas reales con consentimiento). Revisión y aprobación de los contenidos, del informe y del anexo de IA antes de publicarlos. Prueba con usuarios junto con María. |
+| Diego Vásquez Castillo | Definición de la carrera y del alcance del proyecto. Organización del trabajo y reparto de tareas. Creación del repositorio, configuración de GitHub Pages y gestión de colaboradores. Preparación, difusión y cierre de la encuesta de la Fase B (7 respuestas reales con consentimiento). Verificación de las 12 cifras del sitio contra su fuente, incluida la acreditación en el buscador de la CNA. Revisión y aprobación de los contenidos, del informe y del anexo de IA antes de publicarlos. Prueba con usuarios junto con María. |
 | María García Huarca | Rediseño visual del sitio (portada, íconos y logo propios, gráficos de créditos y de duración). Foto propia del campus. Análisis de la encuesta (Fase B) y justificación del orden de secciones con sus resultados (Fase C). Verificación de 10 de las 12 cifras del sitio contra su fuente (Fase E). Búsqueda de las fuentes F14 a F16. Mediciones de calidad con PageSpeed y CompliaScan. Prueba con usuarios junto con Diego. |
 
 ## 11. Glosario

@@ -21,7 +21,7 @@ Principio rector: toda afirmación del sitio debe poder rastrearse hasta una fue
 | F15 | Universidad Tecnológica Metropolitana. (s.f.). *Programas de inclusión y acceso a la educación superior*. https://www.utem.cl/admision/programas-de-inclusion-y-equidad/ | Primaria | 2026 | 12-11-2026 | Admisión |
 | F16 | Universidad Tecnológica Metropolitana. (s.f.). *Preguntas frecuentes de admisión*. https://www.utem.cl/admision/preguntas-frecuentes/ | Primaria | 2026 | 12-11-2026 | Admisión |
 
-Resumen: **14 fuentes, 12 primarias y 2 secundarias** (el mínimo exigido es 8, con al menos 5 primarias). Los IDs F12 y F13 se reservaron para la Comisión Nacional de Acreditación y para el cuerpo académico, pero no se usaron (ver hallazgo 2 y limitaciones del informe).
+Resumen: **14 fuentes, 12 primarias y 2 secundarias** (el mínimo exigido es 8, con al menos 5 primarias). Los IDs F12 y F13 no se usaron.
 
 ## 2. Evaluación con los cinco criterios
 
@@ -51,7 +51,7 @@ Resumen: **14 fuentes, 12 primarias y 2 secundarias** (el mínimo exigido es 8, 
 ## 3. Hallazgos al contrastar fuentes
 
 1. **Malla curricular:** la malla publicada en la página web de la carrera (F01) no coincide con la aprobada por la Resolución Exenta 03102 de 2022 (F02); por ejemplo, la web repite "Ingeniería de Software" en los semestres V y VI y no informa créditos. El folleto oficial (F03) sí coincide con la resolución. **Decisión:** usar la resolución, porque es el documento con validez legal y el único que informa los créditos SCT por asignatura.
-2. **Acreditación institucional:** Mi Futuro (F04) informa 4 años porque su dato de acreditación está actualizado al 31 de octubre de 2025. La UTEM informa 5 años, nivel Avanzado, hasta octubre de 2031 (F06, octubre de 2026). **Decisión:** usar el dato más reciente. No se contrastó con el buscador de la Comisión Nacional de Acreditación, por lo que se declara como limitación.
+2. **Acreditación institucional:** Mi Futuro (F04) informa 4 años porque su dato de acreditación está actualizado al 31 de octubre de 2025. La UTEM informa 5 años, nivel Avanzado, hasta octubre de 2031 (F06, octubre de 2026). **Decisión:** usar el dato más reciente, que además se contrastó con el buscador de la Comisión Nacional de Acreditación el 12-11-2026.
 3. **Empleabilidad:** el folleto (F03) muestra 89,6 % al primer año y 95,3 % al segundo, sin año del dato. Mi Futuro (F04) muestra 87,1 % y 96,5 %, con cohortes identificadas en su metodología (F05). **Decisión:** usar Mi Futuro, porque declara año y método.
 4. **Grado académico:** la resolución (F02) dice "Licenciado en Ingeniería Informática" y la web (F01) dice "Licenciada/o en Informática". **Decisión:** usar la denominación vigente de la web, y registrar la diferencia.
 5. **Acceso directo:** la página de Acceso Directo (F14) mezcla información de 2027 con plazos del proceso anterior (desde el 17 de noviembre de 2025). **Decisión:** no publicar fechas de esa vía; solo sus requisitos.
