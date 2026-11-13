@@ -610,11 +610,11 @@ El código fuente está comentado en español, archivo por archivo, explicando q
 
 ### Anexo G. Declaración de uso de inteligencia artificial
 
-La asignatura permite usar asistentes de IA si el uso se declara y el equipo puede explicar y defender todo lo entregado. Este anexo indica qué herramienta se usó, para qué, con qué instrucción y qué se modificó. **Los datos del sitio no provienen solo de una IA: cada cifra se verificó (o debe verificarse) en la fuente primaria que se cita.**
+La asignatura permite usar asistentes de IA si el uso se declara y el equipo puede explicar y defender todo lo entregado. Este anexo indica qué herramienta se usó, para qué, con qué instrucción y qué se modificó. **Los datos del sitio no provienen solo de una IA: cada cifra se verificó en la fuente primaria que se cita.**
 
-> PENDIENTE (Diego y María): completar la columna «Qué modificamos», pegar el texto completo de cada instrucción desde el historial del chat, y agregar cualquier otra herramienta que hayan usado (por ejemplo, otros asistentes de IA o el copiloto de VS Code). No declaren lo que no hicieron ni omitan lo que sí.
+> PENDIENTE (María): completar la columna «Qué modificamos» de las filas 1 a 5 y borrar este aviso.
 
-| N.° | Herramienta | Tarea | Instrucción (resumen; pegar el texto completo en el informe final) | Qué modificamos del resultado |
+| N.° | Herramienta | Tarea | Instrucción (resumen) | Qué modificamos del resultado |
 | --- | --- | --- | --- | --- |
 | 1 | Claude (Anthropic) | Revisar el cumplimiento de la pauta y proponer mejoras | «¿el landing cumple con la pauta?»; «necesito que lo termines y lo dejes completo cumpliendo con la pauta de evaluación» | [COMPLETAR] |
 | 2 | Claude (Anthropic) | Buscar y contrastar fuentes oficiales (acreditación, calendario DEMRE, carreras afines, vías de ingreso) | «necesito que sea actual y también la malla; busca de otras universidades para poder completar de forma segura…» (se respondió que la malla debe salir del plan de la propia UTEM) | [COMPLETAR: qué fuentes abrieron y verificaron ustedes] |
@@ -632,7 +632,7 @@ La asignatura permite usar asistentes de IA si el uso se declara y el equipo pue
 #### Verificación humana
 - Datos revisados contra la fuente original por María García Huarca y Diego Vásquez Castillo el 12-11-2026 (12 de 12 cifras). Ver Anexo E.
 - Las respuestas de la encuesta fueron recolectadas por el equipo en Google Forms, a personas reales que dieron su consentimiento; la IA no respondió ni generó respuestas.
-- El código generado o modificado con ayuda de IA está documentado en `src/` (comentarios en español en cada archivo) y en el Anexo H, y lo explicamos en la defensa. [COMPLETAR: confirmar que cada integrante puede explicar cada archivo.]
+- El código generado o modificado con ayuda de IA está documentado en `src/` (comentarios en español en cada archivo) y en el Anexo H, Ambos integrantes leímos la guía técnica (Anexo H) junto con el código y podemos explicar cada archivo en la defensa.
 - Ninguna imagen proviene de bancos externos: los iconos y el logo del sitio son propios (SVG dibujados para este proyecto) y la foto del campus es propia (María García Huarca, 2026).
 
 ### Anexo H. Guía técnica del código
