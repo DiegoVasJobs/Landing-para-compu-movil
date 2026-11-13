@@ -17,6 +17,7 @@ La asignatura permite usar asistentes de IA si el uso se declara y el equipo pue
 | 9 | Claude (Anthropic), Claude Code | Plantillas de las fases A a E, borrador del informe y glosario | «Haz lo de la sección "Yo"» | Las plantillas se completaron con los datos reales de la encuesta y de la revisión de fuentes |
 | 10 | Claude (Anthropic), Claude Code | Script de Google Apps Script que crea el formulario de la encuesta y programa su cierre | «¿Podrías hacer tú mismo el form?» | Se revisó la vista previa y la configuración del formulario antes de enviarlo |
 | 11 | Claude (Anthropic), Claude Code | Evaluar las fuentes con los cinco criterios, reordenar las preguntas frecuentes según la encuesta, contrastar los conteos de la encuesta con la hoja de respuestas y actualizar el informe | «Haz todo lo que falte y solo déjame lo que sea necesario que haga yo a mano» | Diego revisó los cambios antes de publicarlos |
+| 12 | Claude (Anthropic), Claude Code | Script del formulario de la prueba con usuarios, análisis de las respuestas y aplicación de las correcciones al sitio | «quería automatizar lo de las respuestas»; «revísalo y dime qué falta» | Diego consiguió a las 3 participantes y revisó las correcciones en la página antes de publicarlas |
 
 ## Verificación humana
 - Datos revisados contra la fuente original por María García Huarca y Diego Vásquez Castillo el 12-11-2026 (12 de 12 cifras). Ver `fase-e-validacion.md`.

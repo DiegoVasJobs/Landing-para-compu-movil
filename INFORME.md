@@ -112,7 +112,11 @@ Los textos no están escritos dentro del código. Están en archivos de datos se
 **Revisión cruzada de cifras.** Revisamos 12 afirmaciones con cifras del sitio contra su fuente primaria (resolución de la malla, páginas oficiales de la UTEM, Oferta Académica 2027, Mi Futuro y DEMRE). Las 12 coinciden con su fuente; la acreditación institucional se contrastó además con el buscador de la Comisión Nacional de Acreditación. Durante la revisión encontramos diferencias entre documentos oficiales (por ejemplo, el folleto antiguo con una acreditación vencida y la acreditación de "4 años" de Mi Futuro) y las resolvimos usando la fuente más reciente. Detalle en el [Anexo D](docs/fase-e-validacion.md).
 **Prueba con usuarios.**
 
-> PENDIENTE: resumir la prueba con usuarios (participantes, tareas logradas, hallazgos y correcciones aplicadas) cuando se complete el registro del Anexo D.
+Tres personas del público objetivo (un egresado de enseñanza media y dos estudiantes de 4.° medio, una de ellas menor de edad con autorización de su apoderado) probaron el sitio publicado el 12 de noviembre de 2026. Usamos un formulario en el que cada persona escribía lo que encontraba en 7 tareas concretas, para comprobar si la respuesta era correcta y no solo si decía haberla encontrado.
+
+Todas encontraron la duración y el costo sin dificultad. Sin embargo, **nadie indicó hasta cuándo está acreditada la universidad ni las fechas de postulación**: esos datos estaban en el sitio, pero poco visibles. Además, la comparación con Ingeniería Civil en Computación resultó incómoda en el celular, una persona no reconoció la fuente de la empleabilidad y otra confundió el año de una asignatura.
+
+A partir de esto aplicamos cinco correcciones: la fecha de término de la acreditación se muestra en grande, las fechas de postulación aparecen en un aviso al inicio de Admisión, la tabla comparativa se convierte en tarjetas en el celular, el nombre de la fuente de los indicadores se escribe en el texto y cada semestre de la malla indica su año. Una persona encontró respuesta a su duda principal, otra en parte y otra no; las correcciones apuntan justamente a lo que les faltó. Detalle en el [Anexo D](docs/fase-e-validacion.md).
 
 ## 8. Decisiones de implementación (explicadas sin tecnicismos)
 

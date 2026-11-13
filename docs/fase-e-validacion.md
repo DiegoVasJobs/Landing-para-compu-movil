@@ -19,50 +19,39 @@ Cada integrante verifica las cifras del sitio contra la fuente primaria (no la c
 | Fechas clave 2027 | Admisión | F07 | Sí. Las 5 fechas del sitio coinciden con el calendario DEMRE 2027 | Diego | 12-11-2026 | |
 | Matrícula $90.000 y arancel $4.763.300 | Admisión / FAQ | F01 | Sí, pero son valores de 2026. Resolución Exenta N.° 05023 de la UTEM (25-11-2025) y Oferta Académica 2027 (arancel referencial 2026) | María y Diego | 12-11-2026 | Indicar el año 2026 en el sitio |
 
-## 2. Prueba con usuarios (mínimo 3 personas del público objetivo)
+## 2. Prueba con usuarios
 
-Antes de empezar, pedir consentimiento (mismo texto de la Fase B; autorización de tutor si es menor). Los respaldos de consentimiento se guardan fuera del repositorio.
+**Método.** Prueba no moderada mediante un formulario de Google, realizada el 12-11-2026 entre las 22:31 y las 22:37. Cada persona abrió el sitio publicado y, en el formulario, escribió **lo que encontró** en cada tarea y qué tan fácil le resultó. Así se puede comprobar si la respuesta era correcta, y no solo si la persona dice haberla encontrado. La primera pregunta pedía el consentimiento (y la autorización del apoderado para menores de 18 años). La hoja de respuestas, con fecha y hora, se guarda fuera del repositorio y está disponible para el docente.
 
-**Instrucciones:** "Te pediré que uses la página como si estuvieras decidiendo si postular. Piensa en voz alta. No estoy evaluándote a ti, sino a la página."
+**Participantes** (público objetivo; pueden coincidir o no con los de la Fase B):
 
-**Tareas** (anotar si lo logró sin ayuda, el tiempo aproximado y comentarios):
+| Código | Perfil | Dispositivo | Consentimiento |
+| --- | --- | --- | --- |
+| U1 | Egresado/a de enseñanza media | Celular | Sí (18 años o más) |
+| U2 | 4.° medio | Computador | Sí (18 años o más) |
+| U3 | 4.° medio | Celular | Sí, con autorización del apoderado |
 
-**Consentimiento (se lee en voz alta antes de empezar):**
+**Tareas:**
 
-> Somos estudiantes de la UTEM y estamos probando una página web sobre la carrera Ingeniería en Informática, hecha para la asignatura EFE685. **No te estamos evaluando a ti, sino a la página**: si algo te cuesta, es un problema de la página. La prueba dura unos 10 minutos. Anotaremos qué tareas logras y tus comentarios, sin tu nombre: en el informe aparecerás como U1, U2 o U3. Tu participación es voluntaria y puedes detenerte cuando quieras. El docente de la asignatura puede pedir verificar que la prueba fue real. ¿Aceptas participar?
+| # | Tarea | Respuesta correcta en el sitio |
+| --- | --- | --- |
+| T1 | ¿Cuántos semestres dura la carrera? | 8 semestres |
+| T2 | Busca el plan de estudios: escribe 2 asignaturas del primer año | Cualquiera de los semestres 1 y 2 |
+| T3 | ¿La carrera o la universidad está acreditada? ¿Hasta cuándo? | UTEM hasta octubre de 2031; carrera certificada hasta junio de 2030 |
+| T4 | ¿Cuáles son las formas de postular y en qué fechas se postula? | PAES, Acceso Directo y Programas de inclusión; postulación del 4 al 7 de enero de 2027 |
+| T5 | ¿Cuánto cuesta estudiar la carrera? | Matrícula $90.000 y arancel $4.763.300 (2026) |
+| T6 | ¿En qué se diferencia de Ingeniería Civil en Computación? | Duración (8 y 11 semestres), grado y enfoque |
+| T7 | ¿De qué fuente sale el dato de empleabilidad? | Mi Futuro (F04, F05) |
 
-El "sí" queda registrado por escrito (mensaje de WhatsApp o correo de la persona aceptando). Ese respaldo se guarda en el Drive del equipo y **no se sube al repositorio**.
+**Registro por participante.** ✔ respuesta correcta y fácil · ~ respuesta parcial o le costó · ✘ respuesta incorrecta o no encontrada.
 
-**Guion para quien modera:**
+| Código | T1 | T2 | T3 | T4 | T5 | T6 | T7 | ¿Encontró respuesta a su duda principal? | Comentarios |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| U1 | ✔ 8 semestres | ~ correcta, le costó | ~ "5 años", sin fecha; le costó | ~ PAES y acceso directo, sin fechas; le costó | ✔ "4.700.000 aprox." | ✔ duración y complejidad de proyectos | ~ "mifuturo.cl"; le costó | No | Lo más difícil: "las formas de postular". Sugirió que el formulario permitiera avanzar sin responder |
+| U2 | ✔ 8 | ✘ "Inglés y programación general" (Inglés es del 3.er año) | ~ "5 años, 2030": mezcló universidad y carrera; le costó | ~ PAES y acceso directo, "2027", sin fechas exactas; le costó | ✔ $4.763.300 | ✔ correcta | ✘ indicó la página de la UTEM; le costó | En parte | Lo más difícil: la diferencia con Civil en Computación. Cambiaría "el orden de los datos" |
+| U3 | ✔ 8 semestres | ✔ correcta | ~ "5 años", sin fecha | ~ las 3 vías, sin fechas; le costó | ✔ arancel y matrícula | ~ correcta, le costó | ✔ Mi Futuro, Ministerio de Educación | Sí | Lo más difícil: la diferencia entre ingenierías. Pidió "una estructura más cómoda para celular" |
 
-1. Pedir que abra el enlace en su propio dispositivo y anotar cuál usa.
-2. Leer cada tarea **tal cual**, una a la vez. No señalar dónde está la respuesta ni explicar la página.
-3. Pedirle que piense en voz alta ("cuéntame qué vas mirando").
-4. Si después de 2 minutos no encuentra la respuesta, pasar a la siguiente tarea y marcarla ✘.
-5. Al terminar, preguntar: "¿Encontraste respuesta a tu duda principal sobre la carrera?" y "¿Qué cambiarías o qué faltó?". Agradecer.
-6. Recién al final se pueden responder sus dudas sobre la carrera.
-
-| # | Tarea |
-|---|---|
-| T1 | Encuentra cuántos semestres dura la carrera. |
-| T2 | Encuentra el plan de estudios y qué se ve en el primer año. |
-| T3 | Averigua si la carrera está acreditada y hasta cuándo. |
-| T4 | Averigua cómo postular y en qué fechas. |
-| T5 | Encuentra cuánto cuesta estudiar la carrera. |
-| T6 | Averigua en qué se diferencia de Ingeniería Civil en Computación. |
-| T7 | Dime de dónde sale el dato de empleabilidad. |
-
-**Registro por participante**
-
-PENDIENTE: completar con los resultados reales de cada persona.
-
-| Participante (código) | Dispositivo | T1 | T2 | T3 | T4 | T5 | T6 | T7 | ¿Encontró respuesta a su duda principal? | Comentarios |
-|---|---|---|---|---|---|---|---|---|---|---|
-| U1 | | | | | | | | | | |
-| U2 | | | | | | | | | | |
-| U3 | | | | | | | | | | |
-
-Marcar cada tarea con: ✔ sin ayuda / ~ con dificultad / ✘ no lo logró.
+**Resumen.** T1 y T5 fueron resueltas por las 3 personas sin dificultad. Nadie indicó hasta cuándo está acreditada la universidad (T3) ni las fechas de postulación (T4). Una persona encontró respuesta a su duda principal, otra en parte y otra no.
 
 ## 3. Hallazgos y correcciones aplicadas
 
@@ -79,10 +68,13 @@ Marcar cada tarea con: ✔ sin ayuda / ~ con dificultad / ✘ no lo logró.
 
 | # | Hallazgo (qué pasó y a quién) | Gravedad (alta/media/baja) | Corrección aplicada | Evidencia (commit o captura) |
 |---|---|---|---|---|
-| 1 | PENDIENTE | | | |
-| 2 | PENDIENTE | | | |
-| 3 | PENDIENTE | | | |
+| 1 | Nadie indicó hasta cuándo está acreditada la universidad (U1, U2, U3); U2 confundió la acreditación de la universidad (2031) con la certificación de la carrera (2030) | Alta | El valor destacado de cada tarjeta muestra la fecha de término ("Hasta octubre de 2031" y "Hasta junio de 2030") y la tarjeta se titula "Acreditación de la universidad" para diferenciarla de la carrera | Commit "Aplica correcciones de la prueba con usuarios" |
+| 2 | Nadie encontró las fechas de postulación (U1, U2, U3); U1 lo señaló como lo más difícil y U2 pidió cambiar el orden de los datos | Alta | Aviso destacado al inicio de la sección Admisión: "Postulación a carreras 2027: 4 al 7 de enero de 2027", con su fuente | Mismo commit |
+| 3 | La diferencia con Civil en Computación costó a U2 y U3, que en el celular veían una tabla ancha con desplazamiento lateral; U3 pidió una estructura más cómoda para celular | Media | En pantallas menores a 768 px la tabla comparativa se muestra como tarjetas apiladas, con la etiqueta de cada dato | Mismo commit |
+| 4 | U2 indicó la página de la UTEM como fuente de la empleabilidad y a U1 le costó encontrarla: la fuente solo aparecía como cita [F04] | Media | Bajo "Indicadores de titulados" se escribe el nombre de la fuente: Mi Futuro, del Ministerio de Educación | Mismo commit |
+| 5 | U2 nombró Inglés como asignatura del primer año (es del tercero): los semestres no indicaban a qué año corresponden | Media | Cada semestre muestra su año: "Año 1 · Semestre 1" | Mismo commit |
+| 6 | U1 señaló que el formulario de la prueba obligaba a escribir algo aunque no encontrara el dato (se pedía escribir "no lo encontré") | Baja | Se registra como limitación del instrumento de prueba; no afecta al sitio | Este registro |
 
 ## 4. Evidencias
 
-Capturas de pantalla de la prueba, consentimientos (fuera del repositorio) y commits que aplican cada corrección. Las capturas de Mi Futuro, PageSpeed y CompliaScan están en `docs/evidencias/`.
+Hoja de respuestas de la prueba con fecha, hora y consentimiento de cada participante (fuera del repositorio, disponible para el docente) y el commit que aplica las correcciones. Las capturas de Mi Futuro, PageSpeed y CompliaScan están en `docs/evidencias/`.
