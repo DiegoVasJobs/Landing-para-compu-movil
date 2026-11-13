@@ -36,19 +36,19 @@ Las páginas de promoción de carreras suelen usar frases como "la mejor carrera
 
 ## 3. Fase A: búsqueda y evaluación de fuentes
 
-Reunimos 13 fuentes, 12 de ellas primarias. Cada una fue evaluada con cinco criterios: autoridad, vigencia, trazabilidad, objetividad y pertinencia. La matriz completa está en el [Anexo A](docs/fase-a-matriz-fuentes.md).
+Reunimos 14 fuentes, 12 de ellas primarias. Cada una fue evaluada con cinco criterios: autoridad, vigencia, trazabilidad, objetividad y pertinencia. La matriz completa está en el [Anexo A](docs/fase-a-matriz-fuentes.md).
 
 ### Decisiones importantes
 
 Al comparar fuentes encontramos diferencias entre documentos oficiales. Las resolvimos así:
 
 1. **La malla de la web no coincidía con la resolución oficial.** Usamos la Resolución Exenta N.° 03102 de 2022, porque es el documento con validez legal y el único que informa los créditos de cada asignatura.
-2. **Mi Futuro informaba 4 años de acreditación.** Su dato era de octubre de 2025. Usamos la acreditación vigente de 5 años, otorgada en octubre de 2026.
+2. **Mi Futuro informaba 4 años de acreditación.** Su dato era de octubre de 2025. Usamos la acreditación más reciente de 5 años, informada por la UTEM en octubre de 2026.
 3. **El folleto mostraba otra empleabilidad sin indicar el año.** Usamos Mi Futuro, porque declara a qué generaciones corresponde cada dato y cómo se calcula.
 
 ## 4. Fase B: análisis de audiencia
 
-Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público objetivo (códigos P1 a P7). Todas aceptaron participar. El formulario pedía la autorización del apoderado a las personas menores de 18 años. Los respaldos de consentimiento se guardan fuera del repositorio y están disponibles para el docente. Detalle en el [Anexo B](docs/fase-b-audiencia.md) y el instrumento en [fase-b-instrumento.md](docs/fase-b-instrumento.md).
+Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público objetivo (códigos P1 a P7). Todas aceptaron participar. El formulario pedía la autorización del apoderado a las personas menores de 18 años; la única participante menor de edad respondió con esa autorización. Los respaldos de consentimiento se guardan fuera del repositorio y están disponibles para el docente. Detalle en el [Anexo B](docs/fase-b-audiencia.md) y el instrumento en [fase-b-instrumento.md](docs/fase-b-instrumento.md).
 
 **Quiénes respondieron.** 3 egresados de enseñanza media, 2 estudiantes de 4.° medio y 2 personas de 20 años o más que quieren estudiar o cambiar de carrera.
 
@@ -94,7 +94,7 @@ La página sigue el recorrido de alguien que no conoce la carrera: **qué es →
 | 5 | Campo laboral | ¿Dónde trabajaré? |
 | 6 | Respaldo institucional | ¿Qué garantías hay? |
 | 7 | Admisión | ¿Cómo postulo? |
-| 8 | Preguntas frecuentes | Dudas frecuentes de postulantes (se reordenan con la encuesta) |
+| 8 | Preguntas frecuentes | Dudas reales de la encuesta, ordenadas por frecuencia |
 | 9 | Referencias | ¿De dónde sale cada dato? |
 
 **Qué muestra la encuesta sobre el orden.** Los tres temas más marcados fueron costo (6 de 7), malla (5 de 7) y empleabilidad (5 de 7). La malla y el campo laboral van en las posiciones 4 y 5, antes del respaldo institucional y la admisión. Los costos están en Admisión, que es la posición 7. Para que no queden escondidos, el botón "Cómo postular" de la portada lleva directo a esa sección. Las 7 personas usarían el celular, así que el orden se pensó para una lectura vertical en pantalla pequeña. Una persona desconfiaría si faltara información básica (malla, acreditación, duración) y otra si la carrera no estuviera acreditada, por eso esos datos aparecen completos y con su fuente.
@@ -109,10 +109,7 @@ Los textos no están escritos dentro del código. Están en archivos de datos se
 
 ## 7. Fase E: validación
 
-**Revisión cruzada de cifras.** Revisamos 12 afirmaciones con cifras del sitio contra su fuente primaria (resolución de la malla, páginas oficiales de la UTEM, Oferta Académica 2027, Mi Futuro y DEMRE). 10 coinciden con la fuente. Quedan 2 por cerrar: la acreditación institucional en la CNA y la comparación de las fechas clave 2027. Durante la revisión encontramos diferencias entre documentos oficiales (por ejemplo, el folleto antiguo con una acreditación vencida y la acreditación de "4 años" de Mi Futuro) y las resolvimos usando la fuente más reciente. Detalle en el [Anexo D](docs/fase-e-validacion.md).
-
-> PENDIENTE: actualizar el número de afirmaciones coincidentes al cerrar las 2 filas abiertas.
-
+**Revisión cruzada de cifras.** Revisamos 12 afirmaciones con cifras del sitio contra su fuente primaria (resolución de la malla, páginas oficiales de la UTEM, Oferta Académica 2027, Mi Futuro y DEMRE). 10 coinciden con la fuente. Las otras 2 se publican tal como aparecen en su fuente, sin una segunda revisión: la acreditación institucional, respaldada por comunicados de la UTEM pero no contrastada con el buscador de la Comisión Nacional de Acreditación, y las fechas clave 2027, tomadas del calendario del DEMRE. Ambas se declaran en Limitaciones. Durante la revisión encontramos diferencias entre documentos oficiales (por ejemplo, el folleto antiguo con una acreditación vencida y la acreditación de "4 años" de Mi Futuro) y las resolvimos usando la fuente más reciente. Detalle en el [Anexo D](docs/fase-e-validacion.md).
 **Prueba con usuarios.**
 
 > PENDIENTE: resumir la prueba con usuarios (participantes, tareas logradas, hallazgos y correcciones aplicadas) cuando se complete el registro del Anexo D.
@@ -151,6 +148,9 @@ La medición anterior de CompliaScan había sido 89/100. La actual (95/100) supe
 - **Datos de empleabilidad:** corresponden a generaciones tituladas entre 2018 y 2023. Son los más recientes publicados, pero no reflejan necesariamente el mercado actual.
 - **Certificación de la carrera:** los datos (2025 a 2030) provienen solo de la página oficial de la carrera. La carrera no aparece en el buscador de la CNA, por lo que no pudimos contrastarlos con una segunda fuente.
 - **Costos:** la matrícula ($90.000) y el arancel ($4.763.300) son valores de 2026 y la UTEM los entrega como referenciales. Pueden cambiar para la admisión 2027.
+- **Acreditación institucional:** se cita a partir de comunicados de la UTEM (F06, F11). No se contrastó con el buscador de la Comisión Nacional de Acreditación.
+- **Fechas de admisión:** se tomaron del calendario oficial del DEMRE (F07) y no tuvieron una segunda revisión por otro integrante. Conviene revisarlas antes de cada proceso.
+- **Cuerpo académico:** no se publicó, porque no encontramos un dato oficial y verificable para la carrera.
 - **Nombre del grado:** la resolución de 2022 dice "Licenciado en Ingeniería Informática" y la página oficial de la carrera dice "Licenciado en Informática". El sitio usa el nombre de la página oficial.
 
 ## 10. Distribución del trabajo
