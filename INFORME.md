@@ -48,7 +48,7 @@ Al comparar fuentes encontramos diferencias entre documentos oficiales. Las reso
 
 ## 4. Fase B: análisis de audiencia
 
-Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público objetivo (códigos P1 a P7). Todas aceptaron participar. En el caso de la persona menor de edad, su apoderado también estuvo de acuerdo. Los respaldos de consentimiento se guardan fuera del repositorio y están disponibles para el docente. Detalle en el [Anexo B](docs/fase-b-audiencia.md) y el instrumento en [fase-b-instrumento.md](docs/fase-b-instrumento.md).
+Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público objetivo (códigos P1 a P7). Todas aceptaron participar. El formulario pedía la autorización del apoderado a las personas menores de 18 años. Los respaldos de consentimiento se guardan fuera del repositorio y están disponibles para el docente. Detalle en el [Anexo B](docs/fase-b-audiencia.md) y el instrumento en [fase-b-instrumento.md](docs/fase-b-instrumento.md).
 
 **Quiénes respondieron.** 3 egresados de enseñanza media, 2 estudiantes de 4.° medio y 2 personas de 20 años o más que quieren estudiar o cambiar de carrera.
 
@@ -67,7 +67,7 @@ Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público obj
 
 **Dudas y temores.** Tres mencionaron la dificultad (matemáticas, "no poder con los ramos"). Dos mencionaron el campo laboral: que no exista, o que el mercado esté saturado para recién egresados. Una persona dudó entre Ingeniería en Informática y otras carreras de tecnologías de la información.
 
-**Qué las haría desconfiar de una página.** Una interfaz antigua o desordenada (2 personas), la falta de información básica como malla, acreditación y duración (2), que la carrera no esté acreditada (1), y un tono muy insistente o que lo muestre todo muy fácil (2).
+**Qué las haría desconfiar de una página.** Una interfaz antigua o desordenada (2 personas). Las demás respuestas fueron distintas entre sí: que la carrera no esté acreditada, que falte información básica (malla, acreditación, duración), que tenga poca reputación, que sea muy insistente o lo muestre todo muy fácil, y que no transmita confianza o seguridad (1 persona cada una).
 
 **Persona (perfil de usuario).** Una persona egresada de enseñanza media, que ya decidió estudiar en general pero compara opciones. Llega desde Google o desde el sitio de la universidad, usando el celular. Lo primero que quiere saber es cuánto cuesta, qué se estudia y cuánto ganará al titularse. Teme que la carrera sea demasiado difícil o que haya poco trabajo. Desconfía de las páginas desordenadas, insistentes o que omiten datos básicos.
 
@@ -79,7 +79,7 @@ Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público obj
 4. ¿Cuánto dura realmente la carrera? (3 de 7)
 5. ¿Qué tan difícil es? (3 de 7)
 
-Además, una persona pidió opiniones de estudiantes y otra preguntó por el valor de los aranceles. Por eso incluimos testimonios, siempre identificados como opinión personal.
+Además, una persona pidió ver opiniones de estudiantes, otra pidió la acreditación y la malla, y otra preguntó por el valor de los aranceles.
 
 ## 5. Fase C: arquitectura de información
 
@@ -97,7 +97,7 @@ La página sigue el recorrido de alguien que no conoce la carrera: **qué es →
 | 8 | Preguntas frecuentes | Dudas frecuentes de postulantes (se reordenan con la encuesta) |
 | 9 | Referencias | ¿De dónde sale cada dato? |
 
-**Qué muestra la encuesta sobre el orden.** Los tres temas más marcados fueron costo (6 de 7), malla (5 de 7) y empleabilidad (5 de 7). La malla y el campo laboral van en las posiciones 4 y 5, antes del respaldo institucional y la admisión. Los costos están en Admisión, que es la posición 7. Para que no queden escondidos, el botón "Cómo postular" de la portada lleva directo a esa sección. Las 7 personas usarían el celular, así que el orden se pensó para una lectura vertical en pantalla pequeña. Dos personas desconfían si falta información básica (malla, acreditación, duración), por eso esos datos aparecen completos y con su fuente.
+**Qué muestra la encuesta sobre el orden.** Los tres temas más marcados fueron costo (6 de 7), malla (5 de 7) y empleabilidad (5 de 7). La malla y el campo laboral van en las posiciones 4 y 5, antes del respaldo institucional y la admisión. Los costos están en Admisión, que es la posición 7. Para que no queden escondidos, el botón "Cómo postular" de la portada lleva directo a esa sección. Las 7 personas usarían el celular, así que el orden se pensó para una lectura vertical en pantalla pequeña. Una persona desconfiaría si faltara información básica (malla, acreditación, duración) y otra si la carrera no estuviera acreditada, por eso esos datos aparecen completos y con su fuente.
 
 La justificación de cada posición, los wireframes y la tabla que relaciona cada sección con sus fuentes están en el [Anexo C](docs/fase-c-mapa-contenidos.md).
 

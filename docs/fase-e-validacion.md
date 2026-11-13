@@ -56,7 +56,7 @@ Marcar cada tarea con: ✔ sin ayuda / ~ con dificultad / ✘ no lo logró.
 | # | Hallazgo (qué pasó y a quién) | Gravedad (alta/media/baja) | Corrección aplicada | Evidencia (commit o captura) |
 |---|---|---|---|---|
 | 1 | El folleto antiguo de la carrera muestra empleabilidad de 89,6 % y 95,3 % sin año, y una acreditación que venció en septiembre de 2025 | Media | El sitio usa Mi Futuro, que declara de dónde salen los datos. El folleto no se usa como fuente | Informe, sección 3, punto 3 |
-| 2 | Mi Futuro muestra acreditación institucional de "4 años", dato desactualizado. Mi Futuro mismo indica revisar la CNA | Media | El sitio usa la acreditación vigente de 5 años y la cita desde otra fuente. PENDIENTE: confirmar en la CNA | Informe, sección 3, punto 2 |
+| 2 | Mi Futuro muestra acreditación institucional de "4 años", dato desactualizado. Mi Futuro mismo indica revisar la CNA | Media | El sitio usa la acreditación vigente de 5 años (ver Informe, sección 3). PENDIENTE: confirmar en la CNA | Informe, sección 3, punto 2 |
 | 3 | La matrícula y el arancel son valores de 2026, no de 2027 | Media | PENDIENTE: indicar "2026" junto al valor en el sitio | |
 | 4 | La resolución de 2022 nombra el grado "Licenciado en Ingeniería Informática" y la página oficial de la carrera "Licenciado en Informática" | Baja | El sitio usa el nombre de la página oficial. Declarado en Limitaciones | Informe, sección 9 |
 
