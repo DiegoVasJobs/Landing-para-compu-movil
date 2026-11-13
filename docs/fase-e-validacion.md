@@ -21,7 +21,7 @@ Cada integrante verifica las cifras del sitio contra la fuente primaria (no la c
 
 ## 2. Prueba con usuarios
 
-**Método.** Prueba no moderada mediante un formulario de Google, realizada el 12-11-2026 entre las 22:31 y las 22:37. Cada persona abrió el sitio publicado y, en el formulario, escribió **lo que encontró** en cada tarea y qué tan fácil le resultó. Así se puede comprobar si la respuesta era correcta, y no solo si la persona dice haberla encontrado. La primera pregunta pedía el consentimiento (y la autorización del apoderado para menores de 18 años). La hoja de respuestas, con fecha y hora, se guarda fuera del repositorio y está disponible para el docente.
+**Método.** Prueba no moderada mediante un formulario de Google, realizada el 12-11-2026 entre las 22:31 y las 22:37, sobre la versión publicada a las 21:24 de ese día (commit `2e847ff`, con el diseño final). Las correcciones de la sección 3 se aplicaron después, en una versión nueva. Cada persona abrió el sitio publicado y, en el formulario, escribió **lo que encontró** en cada tarea y qué tan fácil le resultó. Así se puede comprobar si la respuesta era correcta, y no solo si la persona dice haberla encontrado. La primera pregunta pedía el consentimiento (y la autorización del apoderado para menores de 18 años). La hoja de respuestas, con fecha y hora, se guarda fuera del repositorio y está disponible para el docente.
 
 **Participantes** (público objetivo; pueden coincidir o no con los de la Fase B):
 
