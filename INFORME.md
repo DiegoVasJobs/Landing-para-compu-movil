@@ -155,12 +155,12 @@ La medición anterior de CompliaScan había sido 89/100. La actual (95/100) supe
 
 ## 10. Distribución del trabajo
 
-Ambos integrantes buscamos información por separado y luego la discutimos juntos. Acordamos qué datos incluir según lo que podía ser útil para un postulante y según lo que a nosotros mismos nos habría gustado saber al elegir carrera.
+Ambos integrantes buscamos información por separado y luego la discutimos juntos. Acordamos qué datos incluir según lo que podía ser útil para un postulante y según lo que a nosotros mismos nos habría gustado saber al elegir carrera. Usamos Claude como asistente en varias tareas, según se detalla en el Anexo F; las decisiones, el trabajo con personas reales, la verificación de datos y la revisión final fueron nuestras.
 
 | Integrante | Aportes principales |
 | --- | --- |
-| Diego Vásquez Castillo | Diseño del sitio. Búsqueda de información y definición de los contenidos junto con María. Elaboración y aplicación de las encuestas de la Fase B. |
-| María García Huarca | Diseño del sitio. Búsqueda de información y definición de los contenidos junto con Diego. |
+| Diego Vásquez Castillo | Definición de la carrera y del alcance del proyecto. Organización del trabajo y reparto de tareas. Creación del repositorio, configuración de GitHub Pages y gestión de colaboradores. Preparación, difusión y cierre de la encuesta de la Fase B (7 respuestas reales con consentimiento). Revisión y aprobación de los contenidos, del informe y del anexo de IA antes de publicarlos. Prueba con usuarios junto con María. |
+| María García Huarca | Rediseño visual del sitio (portada, íconos y logo propios, gráficos de créditos y de duración). Foto propia del campus. Análisis de la encuesta (Fase B) y justificación del orden de secciones con sus resultados (Fase C). Verificación de 10 de las 12 cifras del sitio contra su fuente (Fase E). Búsqueda de las fuentes F14 a F16. Mediciones de calidad con PageSpeed y CompliaScan. Prueba con usuarios junto con Diego. |
 
 ## 11. Glosario
 
