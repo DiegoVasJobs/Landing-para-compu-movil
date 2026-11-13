@@ -11,8 +11,15 @@ La asignatura permite usar asistentes de IA si el uso se declara y el equipo pue
 | 3 | Claude (Anthropic) | Corregir accesibilidad (objetivos táctiles de 24 px, `aside` anidado) tras el escaneo de Compliascan | «quiero mejorar el error anterior que teníamos sobre la página que marcaba 89/100» | [COMPLETAR] |
 | 4 | Claude (Anthropic) | Diseño: portada, iconos y logo propios, gráfico de créditos por ciclo, pie de página, encabezado | «quiero que sea un poco más atractiva la página, todo debe seguir igual a la pauta del profesor» | [COMPLETAR] |
 | 5 | Claude (Anthropic) | Reescribir las preguntas frecuentes, la interpretación del equipo y las vías de admisión | «creo que las respuestas de las preguntas frecuentes no están tan bien» | [COMPLETAR] |
+| 6 | Claude (Anthropic), mediante Claude Code en VS Code | Analizar el enunciado y proponer un plan de trabajo por fases | «Revisa la documentación que hay para realizar la tarea… formula un plan»; «no debe ser tan sofisticado» | Se ajustó el alcance a una tarea universitaria y se repartieron las tareas entre los integrantes |
+| 7 | Claude (Anthropic), Claude Code | Buscar fuentes oficiales y extraer datos: malla de la Resolución 03102, indicadores de Mi Futuro y su metodología, calendario DEMRE, acreditación, carreras afines (F01 a F11) | «Ayúdame con todo» (carrera Ingeniería en Informática UTEM, código 21030) | María verificó 10 de las 12 cifras contra su fuente (Anexo D); las 2 restantes se declaran en Limitaciones |
+| 8 | Claude (Anthropic), Claude Code | Estructura del proyecto Astro: esquemas de validación de datos, componentes por sección, estilos base, publicación automática en GitHub Pages y README | «Ayúdame con todo» | [COMPLETAR] |
+| 9 | Claude (Anthropic), Claude Code | Plantillas de las fases A a E, borrador del informe y glosario | «Haz lo de la sección "Yo"» | Las plantillas se completaron con los datos reales de la encuesta y de la revisión de fuentes |
+| 10 | Claude (Anthropic), Claude Code | Script de Google Apps Script que crea el formulario de la encuesta y programa su cierre | «¿Podrías hacer tú mismo el form?» | Se revisó la vista previa y la configuración del formulario antes de enviarlo |
+| 11 | Claude (Anthropic), Claude Code | Evaluar las fuentes con los cinco criterios, reordenar las preguntas frecuentes según la encuesta, contrastar los conteos de la encuesta con la hoja de respuestas y actualizar el informe | «Haz todo lo que falte y solo déjame lo que sea necesario que haga yo a mano» | [COMPLETAR] |
 
 ## Verificación humana
-- Datos revisados contra la fuente original por: [COMPLETAR nombre] el [COMPLETAR fecha]. Ver `fase-e-validacion.md`.
-- El código generado o modificado con ayuda de IA está documentado en `src/` (comentarios en español en cada archivo) y lo explicamos en la defensa. [COMPLETAR: confirmar que cada integrante puede explicar cada archivo.]
-- Ninguna imagen proviene de bancos externos: los iconos y el logo del sitio son propios (SVG dibujados para este proyecto).
+- Datos revisados contra la fuente original por María García Huarca el 12-11-2026 (10 de 12 cifras). Ver `fase-e-validacion.md`.
+- Las respuestas de la encuesta fueron recolectadas por el equipo en Google Forms, a personas reales que dieron su consentimiento; la IA no respondió ni generó respuestas.
+- El código generado o modificado con ayuda de IA está documentado en `src/` (comentarios en español en cada archivo) y en `DOCUMENTACION_CODIGO.md`, y lo explicamos en la defensa. [COMPLETAR: confirmar que cada integrante puede explicar cada archivo.]
+- Ninguna imagen proviene de bancos externos: los iconos y el logo del sitio son propios (SVG dibujados para este proyecto) y la foto del campus es propia (María García Huarca, 2026).
