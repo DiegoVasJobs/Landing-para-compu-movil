@@ -23,14 +23,15 @@ No hace falta saber programar. Toda la información está en archivos de texto d
 | `campo-laboral.json` | Áreas de trabajo, empleabilidad e ingresos |
 | `respaldo.json` | Acreditación y otros respaldos institucionales |
 | `admision.json` | Vías de ingreso, ponderaciones, fechas, costos y contacto |
-| `faq/` | Una pregunta frecuente por archivo |
+| `faq/` | Una pregunta frecuente por archivo (el campo `orden` define en qué posición aparece) |
+| `fotos.json` | Fotos propias: archivo, texto alternativo y crédito obligatorios |
 | `referencias.json` | Lista de fuentes (F01, F02, …) en formato APA 7 |
 
 ### Paso a paso para cambiar un dato (ejemplo: el arancel)
 
 1. En GitHub, abre `src/content/admision.json` y presiona el ícono del lápiz (**Edit**).
 2. Cambia el número, por ejemplo `"arancelAnual": 4763300`. Escribe los montos **sin puntos ni signo $**.
-3. Si el dato viene de una fuente nueva, agrégala primero en `referencias.json` con un ID nuevo (por ejemplo `F12`) y cítala en el campo `fuentes`.
+3. Si el dato viene de una fuente nueva, agrégala primero en `referencias.json` con un ID nuevo (por ejemplo `F17`) y cítala en el campo `fuentes`.
 4. Presiona **Commit changes** y escribe una breve descripción del cambio.
 5. Espera 1 a 2 minutos y revisa la página publicada.
 
@@ -70,9 +71,10 @@ src/
 ├── lib/                # Funciones de apoyo (formato de fechas y pesos)
 ├── pages/index.astro   # La página: une todas las secciones
 └── styles/global.css   # Colores, tipografía y diseño responsivo
-public/                 # Ícono e imagen para redes sociales
+public/                 # Ícono, imagen para redes sociales y fotos propias (img/)
 docs/                   # Evidencias del proceso (fuentes, encuestas, validación)
 INFORME.md              # Informe del proyecto
+DOCUMENTACION_CODIGO.md # Guía para entender el código archivo por archivo
 ```
 
 ## Equipo

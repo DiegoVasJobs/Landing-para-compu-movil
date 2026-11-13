@@ -106,9 +106,7 @@ const cifras: ReadonlyArray<{ valor: string; etiqueta: string }> = [
         {carrera.vacantes} vacantes · {carrera.direccion}
         <Cita fuentes={carrera.fuentes} />
       </p>
-      <p class="nota">
-        El código de postulación es el del Departamento de Evaluación, Medición y Registro Educacional (DEMRE).
-      </p>
+      <p class="nota">{carrera.notaCodigo}</p>
     </div>
   </div>
 </div>
@@ -134,13 +132,21 @@ const cifras: ReadonlyArray<{ valor: string; etiqueta: string }> = [
     background: rgba(255, 255, 255, 0.07);
   }
 
+  /* La red decorativa va abajo a la derecha, detrás de la ficha, para no cruzar las cifras. */
   .hero__red {
     position: absolute;
-    left: -2rem;
-    bottom: -1rem;
+    right: -3rem;
+    bottom: -2rem;
     width: 34rem;
-    max-width: 85%;
+    max-width: 70%;
     pointer-events: none;
+  }
+
+  /* En pantallas medianas y chicas la red cruzaría las cifras: se oculta (es solo decoración). */
+  @media (max-width: 63.99rem) {
+    .hero__red {
+      display: none;
+    }
   }
 
   .hero__interior {
