@@ -14,9 +14,9 @@ La página sigue el orden de las cinco preguntas del encargo (qué es, qué apre
 | 3 | Perfil de egreso | ¿Qué podré hacer? | Complementa la duda sobre salidas laborales (P6 y P7). Se redactó en lenguaje claro. |
 | 4 | Plan de estudios | ¿Qué aprenderé? | La malla fue marcada por 5 de 7. Incluye el filtro por año, que ayuda a ver una parte a la vez en el celular. |
 | 5 | Campo laboral | ¿Dónde trabajaré? | Empleabilidad y sueldos fue marcado por 5 de 7. Muestra datos oficiales con año. |
-| 6 | Respaldo institucional | ¿Qué garantías hay? | La falta de acreditación o de información básica generó desconfianza (P3 y P6). |
+| 6 | Respaldo institucional | ¿Qué garantías hay? | La falta de acreditación o de información básica generó desconfianza (P3 y P6). Muestra la acreditación, la certificación de la carrera y el plan oficial. |
 | 7 | Admisión | ¿Cómo postulo? | Cierra el recorrido con la acción. El costo fue el tema más marcado (6 de 7) y vive aquí. |
-| 8 | Preguntas frecuentes | Dudas de la Fase B | Responde dudas concretas de la encuesta: costo, duración real, matemática, acreditación y diferencia con Civil en Computación. |
+| 8 | Preguntas frecuentes | Dudas de la Fase B | Responde las dudas de la encuesta en orden de frecuencia: costo, trabajo y sueldos, duración real, dificultad (matemática), acreditación y diferencia con Civil en Computación. |
 | 9 | Referencias | ¿De dónde sale esto? | Cada cifra tiene su ID de fuente enlazado desde el texto. |
 
 **Limitación declarada:** el costo fue el tema más marcado y no aparece antes de la sección Admisión. Se mitiga con el botón "Cómo postular" fijo en el encabezado y con la pregunta "¿Cuánto cuesta estudiar la carrera?" en las preguntas frecuentes. Mostrarlo en la portada queda como mejora posible.
@@ -73,7 +73,7 @@ La página sigue el orden de las cinco preguntas del encargo (qué es, qué apre
 | ▸ pregunta               |
 +--------------------------+
 | REFERENCIAS              |
-| F01 ... F13+             |
+| F01 ... F16              |
 +--------------------------+
 | Pie: equipo, aviso       |
 +--------------------------+
@@ -128,9 +128,7 @@ La página sigue el orden de las cinco preguntas del encargo (qué es, qué apre
 | Perfil de egreso | F01, F03 |
 | Plan de estudios | F02 |
 | Campo laboral | F01, F03 (áreas); F04, F05 (indicadores) |
-| Respaldo institucional | F06, F12 (acreditación institucional); F01 (certificación de la carrera); F02 (plan oficial); F13 (cuerpo académico) |
+| Respaldo institucional | F06, F11 (acreditación institucional); F01 (certificación de la carrera); F02 (plan oficial) |
 | Admisión | F10, F16 (PAES); F14 (acceso directo); F15 (inclusión); F01 (ponderaciones y costos); F07 (fechas) |
-| Preguntas frecuentes | F01, F02, F04, F06, F08 |
-| Referencias | F01 a F16 (con F12 y F13 ya agregadas) |
-
-*(Los IDs de F12 y F13 existen en el sitio solo después de agregarlos a `src/content/referencias.json`; ver `docs/fase-a-f12-f13.md`.)*
+| Preguntas frecuentes | F01, F02, F04, F05, F06, F08 |
+| Referencias | F01 a F11 y F14 a F16 (14 fuentes) |

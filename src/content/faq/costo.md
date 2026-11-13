@@ -1,6 +1,6 @@
 ---
 pregunta: ¿Cuánto cuesta estudiar la carrera?
-orden: 2
+orden: 1
 tipo: dato
 fuentes: [F01]
 ---

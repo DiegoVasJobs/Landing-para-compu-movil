@@ -71,6 +71,8 @@ const carrera = defineCollection({
     sede: z.string(),
     direccion: z.string(),
     vacantes: z.number().int().positive(),
+    /** Aclaración sobre el código de postulación (para lectores que no conocen el DEMRE). */
+    notaCodigo: z.string(),
     fuentes,
     /** Propósito formativo, redactado en lenguaje claro. */
     proposito: z.object({ texto: z.string(), fuentes }),
@@ -240,7 +242,7 @@ const faq = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/faq' }),
   schema: z.object({
     pregunta: z.string(),
-    /** Orden de aparición. Cuando termine la encuesta (Fase B), se reordena según la frecuencia de cada duda. */
+    /** Orden de aparición: según la frecuencia de cada duda en la encuesta (Fase B). */
     orden: z.number().int().positive(),
     tipo: tipoContenido.default('dato'),
     /** Una respuesta puede no tener cifras (por eso la lista puede venir vacía). */
