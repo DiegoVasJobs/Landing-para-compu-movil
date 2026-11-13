@@ -11,10 +11,10 @@
 
 ## Integrantes
 
-| Nombre completo | RUT | Correo institucional | Carrera | Usuario GitHub |
-| --- | --- | --- | --- | --- |
-| Diego Vásquez Castillo | PENDIENTE | PENDIENTE | PENDIENTE | DiegoVasJobs |
-| María García Huarca | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
+| Nombre completo | Correo institucional | Carrera | Usuario GitHub |
+| --- | --- | --- | --- |
+| Diego Vásquez Castillo | dvasquezca@utem.cl | Ingeniería en Informática | DiegoVasJobs |
+| María García Huarca | mgarciah@utem.cl | Ingeniería en Informática | xxt-cote |
 
 ---
 
@@ -48,7 +48,38 @@ Al comparar fuentes encontramos diferencias entre documentos oficiales. Las reso
 
 ## 4. Fase B: análisis de audiencia
 
-> PENDIENTE: resumir aquí los resultados de la encuesta (número de participantes, temas más importantes, canales, persona y preguntas priorizadas). Detalle en el [Anexo B](docs/fase-b-audiencia.md) y el instrumento en [fase-b-instrumento.md](docs/fase-b-instrumento.md).
+Aplicamos un cuestionario breve de 8 preguntas a **7 personas** del público objetivo (códigos P1 a P7). Todas aceptaron participar. En el caso de la persona menor de edad, su apoderado también estuvo de acuerdo. Los respaldos de consentimiento se guardan fuera del repositorio y están disponibles para el docente. Detalle en el [Anexo B](docs/fase-b-audiencia.md) y el instrumento en [fase-b-instrumento.md](docs/fase-b-instrumento.md).
+
+**Quiénes respondieron.** 3 egresados de enseñanza media, 2 estudiantes de 4.° medio y 2 personas de 20 años o más que quieren estudiar o cambiar de carrera.
+
+**Qué les importa para decidir** (cada persona marcó 3 temas):
+
+| Tema | Personas (de 7) |
+| --- | --- |
+| Costo, becas y gratuidad | 6 |
+| Qué se estudia (malla) | 5 |
+| Empleabilidad y sueldos | 5 |
+| Duración real | 3 |
+| Acreditación | 1 |
+| Puntajes y ponderaciones | 1 |
+
+**Canales.** 5 de 7 buscan información en Google (una de las opciones incluía Mi Futuro y DEMRE), 3 en el sitio de la universidad y 2 en TikTok. Las 7 personas verían la página desde el **celular**.
+
+**Dudas y temores.** Tres mencionaron la dificultad (matemáticas, "no poder con los ramos"). Dos mencionaron el campo laboral: que no exista, o que el mercado esté saturado para recién egresados. Una persona dudó entre Ingeniería en Informática y otras carreras de tecnologías de la información.
+
+**Qué las haría desconfiar de una página.** Una interfaz antigua o desordenada (2 personas), la falta de información básica como malla, acreditación y duración (2), que la carrera no esté acreditada (1), y un tono muy insistente o que lo muestre todo muy fácil (2).
+
+**Persona (perfil de usuario).** Una persona egresada de enseñanza media, que ya decidió estudiar en general pero compara opciones. Llega desde Google o desde el sitio de la universidad, usando el celular. Lo primero que quiere saber es cuánto cuesta, qué se estudia y cuánto ganará al titularse. Teme que la carrera sea demasiado difícil o que haya poco trabajo. Desconfía de las páginas desordenadas, insistentes o que omiten datos básicos.
+
+**Preguntas priorizadas** (por frecuencia en las respuestas):
+
+1. ¿Cuánto cuesta y hay becas o gratuidad? (6 de 7)
+2. ¿Qué se estudia? (5 de 7)
+3. ¿Cuánto se gana y hay trabajo? (5 de 7)
+4. ¿Cuánto dura realmente la carrera? (3 de 7)
+5. ¿Qué tan difícil es? (3 de 7)
+
+Además, una persona pidió opiniones de estudiantes y otra preguntó por el valor de los aranceles. Por eso incluimos testimonios, siempre identificados como opinión personal.
 
 ## 5. Fase C: arquitectura de información
 
@@ -66,7 +97,7 @@ La página sigue el recorrido de alguien que no conoce la carrera: **qué es →
 | 8 | Preguntas frecuentes | Dudas frecuentes de postulantes (se reordenan con la encuesta) |
 | 9 | Referencias | ¿De dónde sale cada dato? |
 
-> PENDIENTE: justificar el orden con los resultados de la Fase B.
+**Qué muestra la encuesta sobre el orden.** Los tres temas más marcados fueron costo (6 de 7), malla (5 de 7) y empleabilidad (5 de 7). La malla y el campo laboral van en las posiciones 4 y 5, antes del respaldo institucional y la admisión. Los costos están en Admisión, que es la posición 7. Para que no queden escondidos, el botón "Cómo postular" de la portada lleva directo a esa sección. Las 7 personas usarían el celular, así que el orden se pensó para una lectura vertical en pantalla pequeña. Dos personas desconfían si falta información básica (malla, acreditación, duración), por eso esos datos aparecen completos y con su fuente.
 
 La justificación de cada posición, los wireframes y la tabla que relaciona cada sección con sus fuentes están en el [Anexo C](docs/fase-c-mapa-contenidos.md).
 
@@ -78,7 +109,13 @@ Los textos no están escritos dentro del código. Están en archivos de datos se
 
 ## 7. Fase E: validación
 
-> PENDIENTE: resumir la revisión cruzada de afirmaciones, la prueba con usuarios (participantes, tareas logradas, hallazgos) y las correcciones aplicadas. Detalle en el [Anexo D](docs/fase-e-validacion.md).
+**Revisión cruzada de cifras.** Revisamos 12 afirmaciones con cifras del sitio contra su fuente primaria (resolución de la malla, páginas oficiales de la UTEM, Oferta Académica 2027, Mi Futuro y DEMRE). 10 coinciden con la fuente. Quedan 2 por cerrar: la acreditación institucional en la CNA y la comparación de las fechas clave 2027. Durante la revisión encontramos diferencias entre documentos oficiales (por ejemplo, el folleto antiguo con una acreditación vencida y la acreditación de "4 años" de Mi Futuro) y las resolvimos usando la fuente más reciente. Detalle en el [Anexo D](docs/fase-e-validacion.md).
+
+> PENDIENTE: actualizar el número de afirmaciones coincidentes al cerrar las 2 filas abiertas.
+
+**Prueba con usuarios.**
+
+> PENDIENTE: resumir la prueba con usuarios (participantes, tareas logradas, hallazgos y correcciones aplicadas) cuando se complete el registro del Anexo D.
 
 ## 8. Decisiones de implementación (explicadas sin tecnicismos)
 
@@ -92,33 +129,38 @@ Los textos no están escritos dentro del código. Están en archivos de datos se
 | **Una pieza (componente) por sección** | Cada sección es un archivo independiente | Facilita encontrar y modificar cada parte |
 | **Casi cero JavaScript** | Solo un script pequeño para filtrar la malla por año | El filtro ayuda a no perderse entre 44 asignaturas. Si el script no carga, la malla completa se sigue viendo |
 | **Accesibilidad (WCAG 2.2)** | Contraste suficiente, navegación con teclado, enlace "saltar al contenido", etiquetas con texto (no solo color) | La página debe poder usarla cualquier persona, incluidas personas con discapacidad |
-| **Diseño para celular primero** | Se diseñó primero para 360 px y luego para 768 y 1280 px | El público objetivo es joven y suele navegar desde el celular. PENDIENTE: confirmar con la pregunta 7 de la encuesta |
+| **Diseño para celular primero** | Se diseñó primero para 360 px y luego para 768 y 1280 px | El público objetivo es joven y suele navegar desde el celular. En la encuesta, las 7 personas dijeron que verían la página desde el celular |
 | **SEO básico** | Título, descripción, idioma `es-CL`, sitemap y vista previa para redes sociales | Para que aparezca bien en Google y al compartir el enlace |
 | **Publicación automática** | GitHub publica la página cada vez que se guarda un cambio | Nadie tiene que publicar a mano y nunca se publica una versión con errores |
 
 ### Resultados de calidad
 
-> PENDIENTE: completar con los resultados de PageSpeed Insights y CompliaScan sobre el sitio publicado, con capturas en `docs/evidencias/`.
+Mediciones sobre el sitio publicado, realizadas el 12 de noviembre de 2026. Las capturas están en `docs/evidencias/`.
 
 | Herramienta | Resultado |
 | --- | --- |
-| PageSpeed (Rendimiento / Accesibilidad / Buenas prácticas / SEO) | PENDIENTE |
-| CompliaScan | PENDIENTE |
+| PageSpeed, celulares (Rendimiento / Accesibilidad / Buenas prácticas / SEO) | 100 / 100 / 100 / 100 |
+| PageSpeed, escritorio (Rendimiento / Accesibilidad / Buenas prácticas / SEO) | 100 / 100 / 100 / 100 |
+| CompliaScan | 95/100 (59 reglas revisadas, 49 aprobadas, 1 problema de gravedad "seria", marcado como probable: la herramienta no detectó un enlace para saltar la navegación) |
+
+La medición anterior de CompliaScan había sido 89/100. La actual (95/100) supera el mínimo de 90 que pide el encargo.
 
 ## 9. Limitaciones
 
 - **Malla:** la web de la carrera muestra una malla distinta a la resolución de 2022. Si existe un plan más nuevo aún no publicado en Transparencia, habría que actualizar `malla.json` cuando se publique.
 - **Datos de empleabilidad:** corresponden a generaciones tituladas entre 2018 y 2023. Son los más recientes publicados, pero no reflejan necesariamente el mercado actual.
-- **Cuerpo académico:** PENDIENTE (completar o eliminar según el resultado de la tarea M2).
+- **Certificación de la carrera:** los datos (2025 a 2030) provienen solo de la página oficial de la carrera. La carrera no aparece en el buscador de la CNA, por lo que no pudimos contrastarlos con una segunda fuente.
+- **Costos:** la matrícula ($90.000) y el arancel ($4.763.300) son valores de 2026 y la UTEM los entrega como referenciales. Pueden cambiar para la admisión 2027.
+- **Nombre del grado:** la resolución de 2022 dice "Licenciado en Ingeniería Informática" y la página oficial de la carrera dice "Licenciado en Informática". El sitio usa el nombre de la página oficial.
 
 ## 10. Distribución del trabajo
 
-> PENDIENTE: completar al final, de forma honesta, con lo que hizo cada integrante.
+Ambos integrantes buscamos información por separado y luego la discutimos juntos. Acordamos qué datos incluir según lo que podía ser útil para un postulante y según lo que a nosotros mismos nos habría gustado saber al elegir carrera.
 
 | Integrante | Aportes principales |
 | --- | --- |
-| Diego Vásquez Castillo | |
-| María García Huarca | |
+| Diego Vásquez Castillo | Diseño del sitio. Búsqueda de información y definición de los contenidos junto con María. Elaboración y aplicación de las encuestas de la Fase B. |
+| María García Huarca | Diseño del sitio. Búsqueda de información y definición de los contenidos junto con Diego. |
 
 ---
 
